@@ -40,3 +40,6 @@ func _process(delta: float) -> void:
 
 func flash():
 	$AnimationPlayer.play("flash")
+	if symbol == SYMBOLS.BlackSquare:
+		$AnimationPlayer2.play("flash")
+		

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cl06vl1fjxnp1"]
+[gd_scene load_steps=9 format=3 uid="uid://cl06vl1fjxnp1"]
 
 [ext_resource type="Script" uid="uid://dfv3ncweevxpp" path="res://puzzle_tile.gd" id="1_7qxln"]
 [ext_resource type="Texture2D" uid="uid://dqlcfwoht6hvi" path="res://assets/puzzletile.png" id="1_jekb2"]
@@ -37,11 +37,40 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cnic5"]
+resource_name = "new_animation"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cnic5"]
 _data = {
 &"RESET": SubResource("Animation_ja016"),
-&"flash": SubResource("Animation_42vx8")
+&"flash": SubResource("Animation_42vx8"),
+&"new_animation": SubResource("Animation_cnic5")
 }
 
 [node name="PuzzleTile" type="Node2D"]
@@ -66,6 +95,11 @@ shape = SubResource("RectangleShape2D_42vx8")
 disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_cnic5")
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_cnic5")
 }

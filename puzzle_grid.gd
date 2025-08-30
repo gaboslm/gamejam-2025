@@ -76,13 +76,30 @@ func puzzle_check():
 						already_checked.append(checking)
 						var other := "tile_" + str(checking.x) + "_" + str(checking.y)
 						var other_child = self.get_node(other)
-						other_child.modulate = Color.AQUA
+						if other_child.is_pressed or other_child.symbol == PuzzleTile.SYMBOLS.Wall:
+							continue
 						if other_child.symbol == PuzzleTile.SYMBOLS.BlackSquare:
-							print(checking)
 							failures.append(child)
 							break
-						for nb in get_neighbors(x, y):
-							if already_checked.has(nb):
+						for nb in get_neighbors(checking.x, checking.y):
+							if already_checked.has(nb) or to_check.has(nb):
+								continue
+							else:
+								to_check.append(nb)
+				PuzzleTile.SYMBOLS.BlackSquare:
+					var already_checked = []
+					var to_check = [Vector2i(x, y)]
+					for checking in to_check:
+						already_checked.append(checking)
+						var other := "tile_" + str(checking.x) + "_" + str(checking.y)
+						var other_child = self.get_node(other)
+						if other_child.is_pressed or other_child.symbol == PuzzleTile.SYMBOLS.Wall:
+							continue
+						if other_child.symbol == PuzzleTile.SYMBOLS.WhiteSquare:
+							failures.append(child)
+							break
+						for nb in get_neighbors(checking.x, checking.y):
+							if already_checked.has(nb) or to_check.has(nb):
 								continue
 							else:
 								to_check.append(nb)
