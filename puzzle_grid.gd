@@ -6,6 +6,9 @@ var width := 0
 @export
 var height := 0
 
+@export
+var symmetry := false
+
 var prev := Vector2.ZERO
 
 var grid := {}
@@ -53,10 +56,17 @@ func game(delta: float) -> void:
 		var node = get_node_or_null(name)
 		if node:
 			node.is_pressed = true
+			
+			if symmetry:
+				var mirror_name = "tile_" + str(width - x - 1) + "_" + str(y)
+				var mirror_node = get_node_or_null(mirror_name)
+				
+				mirror_node.is_pressed = true
+				
 		
 	
 	is_inside = in_x_bounds and in_y_bounds
-	
+
 
 func puzzle_check():
 	var player: CharacterBody2D = $"../Player"
@@ -82,6 +92,10 @@ func puzzle_check():
 							failures.append(child)
 							break
 						for nb in get_neighbors(checking.x, checking.y):
+							var otherer := "tile_" + str(checking.x) + "_" + str(checking.y)
+							var otherer_child = self.get_node(other)
+							if otherer_child.is_pressed or otherer_child.symbol == PuzzleTile.SYMBOLS.Wall:
+								continue
 							if already_checked.has(nb) or to_check.has(nb):
 								continue
 							else:
@@ -99,6 +113,10 @@ func puzzle_check():
 							failures.append(child)
 							break
 						for nb in get_neighbors(checking.x, checking.y):
+							var otherer := "tile_" + str(checking.x) + "_" + str(checking.y)
+							var otherer_child = self.get_node(other)
+							if otherer_child.is_pressed or otherer_child.symbol == PuzzleTile.SYMBOLS.Wall:
+								continue
 							if already_checked.has(nb) or to_check.has(nb):
 								continue
 							else:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://b2x6a26j8nw1u"]
+[gd_scene load_steps=15 format=4 uid="uid://b2x6a26j8nw1u"]
 
 [ext_resource type="PackedScene" uid="uid://dh3dxqp3ui4ds" path="res://player.tscn" id="1_80nbo"]
 [ext_resource type="Texture2D" uid="uid://37kd3wd24w5q" path="res://assets/wood.png" id="2_e2o6t"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://boc2xy3dqiq60" path="res://assets/bookshelf.png" id="4_fc0e3"]
 [ext_resource type="Script" uid="uid://dhp16d1me46ue" path="res://inspectable.gd" id="5_7jktm"]
 [ext_resource type="Script" uid="uid://cpjgq3e41vx7l" path="res://inspect_bed.gd" id="6_ryrav"]
+[ext_resource type="Texture2D" uid="uid://b0acek3tsekrd" path="res://assets/mirror.png" id="7_eow3j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feb5d"]
 resource_name = "Wood"
@@ -83,6 +84,33 @@ shape = SubResource("RectangleShape2D_eow3j")
 
 [node name="Inspected" type="Node" parent="Area2D"]
 script = ExtResource("6_ryrav")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Mirror" type="TextureRect" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -295.0
+offset_top = -196.0
+offset_right = -99.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+texture = ExtResource("7_eow3j")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

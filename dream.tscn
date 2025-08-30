@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dl6w87awujuty"]
+[gd_scene load_steps=12 format=3 uid="uid://dl6w87awujuty"]
 
 [ext_resource type="Texture2D" uid="uid://37kd3wd24w5q" path="res://assets/wood.png" id="1_pu4yq"]
 [ext_resource type="PackedScene" uid="uid://dh3dxqp3ui4ds" path="res://player.tscn" id="2_8mmqv"]
 [ext_resource type="PackedScene" uid="uid://v3oupo0c04c4" path="res://puzzle_grid.tscn" id="3_t4ffh"]
 [ext_resource type="PackedScene" uid="uid://cl06vl1fjxnp1" path="res://puzzle_tile.tscn" id="4_dhyxt"]
+[ext_resource type="Script" uid="uid://dfv3ncweevxpp" path="res://puzzle_tile.gd" id="4_pu4yq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feb5d"]
 resource_name = "Wood"
@@ -77,6 +78,7 @@ shape = SubResource("RectangleShape2D_feb5d")
 position = Vector2(384, -1467)
 width = 7
 height = 4
+symmetry = null
 
 [node name="tile_0_0" parent="Puzzle1" instance=ExtResource("4_dhyxt")]
 symbol = 3
@@ -179,6 +181,7 @@ symbol = 3
 position = Vector2(384, -1025)
 width = 7
 height = 4
+symmetry = null
 
 [node name="tile_0_0" parent="Puzzle2" instance=ExtResource("4_dhyxt")]
 symbol = 3
@@ -280,6 +283,7 @@ symbol = 3
 position = Vector2(384, -603)
 width = 7
 height = 6
+symmetry = null
 
 [node name="tile_0_0" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
 symbol = 3
@@ -426,6 +430,7 @@ symbol = 3
 position = Vector2(1220, 157)
 width = 6
 height = 7
+symmetry = null
 
 [node name="tile_0_0" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
 symbol = 3
@@ -568,7 +573,1526 @@ position = Vector2(204, 306)
 position = Vector2(255, 306)
 symbol = 3
 
+[node name="Puzzle5" parent="." instance=ExtResource("3_t4ffh")]
+position = Vector2(1768, 157)
+width = 6
+height = 7
+symmetry = null
+
+[node name="tile_0_0" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+symbol = 3
+
+[node name="tile_0_1" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 51)
+symbol = 3
+
+[node name="tile_1_0" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 0)
+
+[node name="tile_1_1" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 51)
+symbol = 1
+
+[node name="tile_2_0" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 0)
+
+[node name="tile_2_1" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 51)
+
+[node name="tile_3_0" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 0)
+
+[node name="tile_3_1" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 51)
+
+[node name="tile_4_0" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 0)
+
+[node name="tile_4_1" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 51)
+
+[node name="tile_5_0" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 0)
+symbol = 4
+
+[node name="tile_5_1" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 51)
+symbol = 3
+
+[node name="tile_0_2" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 102)
+symbol = 3
+
+[node name="tile_1_2" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 102)
+
+[node name="tile_2_2" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 102)
+
+[node name="tile_3_2" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 102)
+
+[node name="tile_4_2" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 102)
+
+[node name="tile_5_2" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 102)
+symbol = 3
+
+[node name="tile_0_3" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 153)
+symbol = 3
+
+[node name="tile_1_3" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 153)
+
+[node name="tile_2_3" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 153)
+
+[node name="tile_3_3" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 153)
+
+[node name="tile_4_3" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 153)
+
+[node name="tile_5_3" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 153)
+symbol = 3
+
+[node name="tile_0_4" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 204)
+symbol = 3
+
+[node name="tile_1_4" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 204)
+
+[node name="tile_2_4" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 204)
+
+[node name="tile_3_4" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 204)
+
+[node name="tile_4_4" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 204)
+
+[node name="tile_5_4" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 204)
+symbol = 3
+
+[node name="tile_0_5" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 255)
+symbol = 3
+
+[node name="tile_1_5" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 255)
+
+[node name="tile_2_5" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 255)
+
+[node name="tile_3_5" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 255)
+
+[node name="tile_4_5" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 255)
+symbol = 2
+
+[node name="tile_5_5" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 255)
+symbol = 3
+
+[node name="tile_0_6" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 306)
+symbol = 4
+
+[node name="tile_1_6" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 306)
+
+[node name="tile_2_6" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 306)
+
+[node name="tile_3_6" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 306)
+
+[node name="tile_4_6" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 306)
+
+[node name="tile_5_6" parent="Puzzle5" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 306)
+symbol = 3
+
+[node name="Puzzle6" parent="." instance=ExtResource("3_t4ffh")]
+position = Vector2(2290, 157)
+width = 6
+height = 7
+symmetry = null
+
+[node name="tile_0_0" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+symbol = 3
+
+[node name="tile_0_1" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 51)
+symbol = 3
+
+[node name="tile_1_0" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 0)
+
+[node name="tile_1_1" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 51)
+
+[node name="tile_2_0" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 0)
+symbol = 2
+
+[node name="tile_2_1" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 51)
+
+[node name="tile_3_0" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 0)
+
+[node name="tile_3_1" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 51)
+
+[node name="tile_4_0" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 0)
+
+[node name="tile_4_1" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 51)
+
+[node name="tile_5_0" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 0)
+symbol = 4
+
+[node name="tile_5_1" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 51)
+symbol = 3
+
+[node name="tile_0_2" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 102)
+symbol = 3
+
+[node name="tile_1_2" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 102)
+
+[node name="tile_2_2" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 102)
+symbol = 1
+
+[node name="tile_3_2" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 102)
+
+[node name="tile_4_2" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 102)
+
+[node name="tile_5_2" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 102)
+symbol = 3
+
+[node name="tile_0_3" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 153)
+symbol = 3
+
+[node name="tile_1_3" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 153)
+
+[node name="tile_2_3" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 153)
+
+[node name="tile_3_3" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 153)
+
+[node name="tile_4_3" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 153)
+
+[node name="tile_5_3" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 153)
+symbol = 3
+
+[node name="tile_0_4" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 204)
+symbol = 3
+
+[node name="tile_1_4" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 204)
+
+[node name="tile_2_4" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 204)
+
+[node name="tile_3_4" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 204)
+symbol = 2
+
+[node name="tile_4_4" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 204)
+
+[node name="tile_5_4" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 204)
+symbol = 3
+
+[node name="tile_0_5" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 255)
+symbol = 3
+
+[node name="tile_1_5" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 255)
+
+[node name="tile_2_5" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 255)
+
+[node name="tile_3_5" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 255)
+
+[node name="tile_4_5" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 255)
+
+[node name="tile_5_5" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 255)
+symbol = 3
+
+[node name="tile_0_6" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 306)
+symbol = 4
+
+[node name="tile_1_6" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 306)
+
+[node name="tile_2_6" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 306)
+
+[node name="tile_3_6" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 306)
+symbol = 1
+
+[node name="tile_4_6" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 306)
+
+[node name="tile_5_6" parent="Puzzle6" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 306)
+symbol = 3
+
+[node name="Puzzle7" parent="." instance=ExtResource("3_t4ffh")]
+position = Vector2(2814, 245)
+width = 13
+height = 3
+symmetry = null
+
+[node name="tile_0_0" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+symbol = 1
+
+[node name="tile_0_1" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 51)
+
+[node name="tile_1_0" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 0)
+
+[node name="tile_1_1" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 51)
+
+[node name="tile_2_0" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 0)
+
+[node name="tile_2_1" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 51)
+
+[node name="tile_3_0" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 0)
+
+[node name="tile_3_1" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 51)
+
+[node name="tile_4_0" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 0)
+symbol = 2
+
+[node name="tile_4_1" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 51)
+
+[node name="tile_5_0" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 0)
+
+[node name="tile_5_1" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 51)
+
+[node name="tile_0_2" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 102)
+symbol = 1
+
+[node name="tile_1_2" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 102)
+
+[node name="tile_2_2" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 102)
+
+[node name="tile_3_2" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 102)
+
+[node name="tile_4_2" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 102)
+symbol = 1
+
+[node name="tile_5_2" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 102)
+
+[node name="tile_6_0" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 0)
+
+[node name="tile_6_1" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 51)
+
+[node name="tile_6_2" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 102)
+
+[node name="tile_7_0" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(357, 0)
+
+[node name="tile_7_1" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(357, 51)
+
+[node name="tile_7_2" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(357, 102)
+
+[node name="tile_8_0" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(408, 0)
+symbol = 2
+
+[node name="tile_8_1" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(408, 51)
+
+[node name="tile_8_2" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(408, 102)
+symbol = 2
+
+[node name="tile_9_0" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(459, 0)
+
+[node name="tile_9_1" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(459, 51)
+
+[node name="tile_9_2" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(459, 102)
+
+[node name="tile_10_0" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(510, 0)
+
+[node name="tile_10_1" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(510, 51)
+
+[node name="tile_10_2" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(510, 102)
+
+[node name="tile_11_0" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(561, 0)
+
+[node name="tile_11_1" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(561, 51)
+
+[node name="tile_11_2" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(561, 102)
+
+[node name="tile_12_0" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(612, 0)
+symbol = 1
+
+[node name="tile_12_1" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(612, 51)
+
+[node name="tile_12_2" parent="Puzzle7" instance=ExtResource("4_dhyxt")]
+position = Vector2(612, 102)
+symbol = 1
+
+[node name="Puzzle8" parent="." instance=ExtResource("3_t4ffh")]
+position = Vector2(3840, 157)
+width = 7
+height = 7
+symmetry = null
+
+[node name="tile_0_0" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+symbol = 3
+
+[node name="tile_0_1" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 51)
+
+[node name="tile_1_0" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 0)
+
+[node name="tile_1_1" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 51)
+symbol = 4
+
+[node name="tile_2_0" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 0)
+symbol = 3
+
+[node name="tile_2_1" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 51)
+
+[node name="tile_3_0" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 0)
+
+[node name="tile_3_1" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 51)
+symbol = 2
+
+[node name="tile_4_0" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 0)
+
+[node name="tile_4_1" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 51)
+
+[node name="tile_5_0" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 0)
+
+[node name="tile_5_1" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 51)
+
+[node name="tile_0_2" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 102)
+symbol = 3
+
+[node name="tile_1_2" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 102)
+symbol = 1
+
+[node name="tile_2_2" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 102)
+
+[node name="tile_3_2" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 102)
+
+[node name="tile_4_2" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 102)
+
+[node name="tile_5_2" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 102)
+
+[node name="tile_0_3" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 153)
+symbol = 3
+
+[node name="tile_1_3" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 153)
+
+[node name="tile_2_3" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 153)
+
+[node name="tile_3_3" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 153)
+
+[node name="tile_4_3" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 153)
+symbol = 1
+
+[node name="tile_5_3" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 153)
+
+[node name="tile_0_4" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 204)
+symbol = 3
+
+[node name="tile_1_4" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 204)
+
+[node name="tile_2_4" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 204)
+symbol = 2
+
+[node name="tile_3_4" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 204)
+
+[node name="tile_4_4" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 204)
+symbol = 1
+
+[node name="tile_5_4" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 204)
+
+[node name="tile_0_5" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 255)
+
+[node name="tile_1_5" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 255)
+
+[node name="tile_2_5" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 255)
+symbol = 4
+
+[node name="tile_3_5" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 255)
+
+[node name="tile_4_5" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 255)
+symbol = 3
+
+[node name="tile_5_5" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 255)
+
+[node name="tile_0_6" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 306)
+symbol = 3
+
+[node name="tile_1_6" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 306)
+
+[node name="tile_2_6" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 306)
+
+[node name="tile_3_6" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 306)
+
+[node name="tile_4_6" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 306)
+
+[node name="tile_5_6" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 306)
+symbol = 2
+
+[node name="tile_6_0" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 0)
+symbol = 3
+
+[node name="tile_6_1" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 51)
+
+[node name="tile_6_2" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 102)
+symbol = 3
+
+[node name="tile_6_3" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 153)
+symbol = 3
+
+[node name="tile_6_4" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 204)
+symbol = 3
+
+[node name="tile_6_5" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 255)
+
+[node name="tile_6_6" parent="Puzzle8" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 306)
+symbol = 3
+
+[node name="Mirror1" parent="." instance=ExtResource("3_t4ffh")]
+position = Vector2(390, 1043)
+width = 7
+height = 7
+symmetry = true
+
+[node name="tile_0_0" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+symbol = 3
+
+[node name="tile_0_1" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 51)
+
+[node name="tile_1_0" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 0)
+
+[node name="tile_1_1" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 51)
+
+[node name="tile_2_0" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 0)
+symbol = 3
+
+[node name="tile_2_1" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 51)
+
+[node name="tile_3_0" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 0)
+symbol = 3
+
+[node name="tile_3_1" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 51)
+symbol = 3
+
+[node name="tile_4_0" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 0)
+symbol = 3
+
+[node name="tile_4_1" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 51)
+
+[node name="tile_5_0" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 0)
+
+[node name="tile_5_1" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 51)
+
+[node name="tile_0_2" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 102)
+
+[node name="tile_1_2" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 102)
+
+[node name="tile_2_2" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 102)
+
+[node name="tile_3_2" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 102)
+symbol = 3
+
+[node name="tile_4_2" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 102)
+
+[node name="tile_5_2" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 102)
+
+[node name="tile_0_3" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 153)
+
+[node name="tile_1_3" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 153)
+
+[node name="tile_2_3" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 153)
+
+[node name="tile_3_3" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 153)
+symbol = 3
+
+[node name="tile_4_3" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 153)
+
+[node name="tile_5_3" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 153)
+
+[node name="tile_0_4" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 204)
+
+[node name="tile_1_4" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 204)
+
+[node name="tile_2_4" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 204)
+
+[node name="tile_3_4" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 204)
+symbol = 3
+
+[node name="tile_4_4" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 204)
+
+[node name="tile_5_4" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 204)
+
+[node name="tile_0_5" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 255)
+
+[node name="tile_1_5" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 255)
+
+[node name="tile_2_5" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 255)
+
+[node name="tile_3_5" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 255)
+symbol = 3
+
+[node name="tile_4_5" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 255)
+
+[node name="tile_5_5" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 255)
+
+[node name="tile_0_6" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 306)
+
+[node name="tile_1_6" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 306)
+
+[node name="tile_2_6" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 306)
+
+[node name="tile_3_6" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 306)
+symbol = 3
+
+[node name="tile_4_6" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 306)
+
+[node name="tile_5_6" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 306)
+
+[node name="tile_6_0" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 0)
+symbol = 3
+
+[node name="tile_6_1" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 51)
+
+[node name="tile_6_2" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 102)
+
+[node name="tile_6_3" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 153)
+
+[node name="tile_6_4" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 204)
+
+[node name="tile_6_5" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 255)
+
+[node name="tile_6_6" parent="Mirror1" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 306)
+
+[node name="Mirror2" parent="." instance=ExtResource("3_t4ffh")]
+position = Vector2(390, 1644)
+width = 7
+height = 7
+symmetry = true
+
+[node name="tile_0_0" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+symbol = 3
+
+[node name="tile_0_1" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 51)
+
+[node name="tile_1_0" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 0)
+
+[node name="tile_1_1" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 51)
+
+[node name="tile_2_0" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 0)
+symbol = 3
+
+[node name="tile_2_1" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 51)
+
+[node name="tile_3_0" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 0)
+symbol = 3
+
+[node name="tile_3_1" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 51)
+symbol = 3
+
+[node name="tile_4_0" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 0)
+symbol = 3
+
+[node name="tile_4_1" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 51)
+
+[node name="tile_5_0" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 0)
+
+[node name="tile_5_1" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 51)
+
+[node name="tile_0_2" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 102)
+
+[node name="tile_1_2" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 102)
+symbol = 4
+
+[node name="tile_2_2" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 102)
+
+[node name="tile_3_2" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 102)
+symbol = 3
+
+[node name="tile_4_2" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 102)
+
+[node name="tile_5_2" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 102)
+
+[node name="tile_0_3" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 153)
+
+[node name="tile_1_3" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 153)
+
+[node name="tile_2_3" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 153)
+
+[node name="tile_3_3" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 153)
+symbol = 3
+
+[node name="tile_4_3" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 153)
+
+[node name="tile_5_3" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 153)
+
+[node name="tile_0_4" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 204)
+
+[node name="tile_1_4" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 204)
+
+[node name="tile_2_4" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 204)
+
+[node name="tile_3_4" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 204)
+symbol = 3
+
+[node name="tile_4_4" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 204)
+
+[node name="tile_5_4" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 204)
+
+[node name="tile_0_5" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 255)
+
+[node name="tile_1_5" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 255)
+
+[node name="tile_2_5" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 255)
+
+[node name="tile_3_5" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 255)
+symbol = 3
+
+[node name="tile_4_5" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 255)
+
+[node name="tile_5_5" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 255)
+
+[node name="tile_0_6" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 306)
+symbol = 3
+
+[node name="tile_1_6" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 306)
+
+[node name="tile_2_6" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 306)
+symbol = 3
+
+[node name="tile_3_6" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 306)
+symbol = 3
+
+[node name="tile_4_6" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 306)
+symbol = 3
+
+[node name="tile_5_6" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 306)
+
+[node name="tile_6_0" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 0)
+symbol = 3
+
+[node name="tile_6_1" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 51)
+
+[node name="tile_6_2" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 102)
+
+[node name="tile_6_3" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 153)
+
+[node name="tile_6_4" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 204)
+
+[node name="tile_6_5" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 255)
+symbol = 4
+
+[node name="tile_6_6" parent="Mirror2" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 306)
+symbol = 3
+
+[node name="Mirror3" parent="." instance=ExtResource("3_t4ffh")]
+position = Vector2(390, 2214)
+width = 7
+height = 8
+symmetry = true
+
+[node name="tile_0_0" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+symbol = 3
+
+[node name="tile_0_1" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 51)
+symbol = 1
+
+[node name="tile_1_0" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 0)
+
+[node name="tile_1_1" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 51)
+
+[node name="tile_2_0" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 0)
+symbol = 3
+
+[node name="tile_2_1" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 51)
+symbol = 2
+
+[node name="tile_3_0" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 0)
+symbol = 3
+
+[node name="tile_3_1" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 51)
+symbol = 3
+
+[node name="tile_4_0" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 0)
+symbol = 3
+
+[node name="tile_4_1" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 51)
+symbol = 3
+
+[node name="tile_5_0" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 0)
+
+[node name="tile_5_1" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 51)
+
+[node name="tile_0_2" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 102)
+
+[node name="tile_1_2" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 102)
+
+[node name="tile_2_2" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 102)
+symbol = 3
+
+[node name="tile_3_2" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 102)
+symbol = 3
+
+[node name="tile_4_2" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 102)
+symbol = 1
+
+[node name="tile_5_2" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 102)
+
+[node name="tile_0_3" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 153)
+
+[node name="tile_1_3" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 153)
+
+[node name="tile_2_3" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 153)
+
+[node name="tile_3_3" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 153)
+symbol = 3
+
+[node name="tile_4_3" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 153)
+
+[node name="tile_5_3" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 153)
+
+[node name="tile_0_4" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 204)
+symbol = 3
+
+[node name="tile_1_4" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 204)
+symbol = 1
+
+[node name="tile_2_4" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 204)
+
+[node name="tile_3_4" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 204)
+symbol = 3
+
+[node name="tile_4_4" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 204)
+
+[node name="tile_5_4" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 204)
+symbol = 3
+
+[node name="tile_0_5" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 255)
+
+[node name="tile_1_5" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 255)
+
+[node name="tile_2_5" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 255)
+
+[node name="tile_3_5" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 255)
+symbol = 3
+
+[node name="tile_4_5" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 255)
+
+[node name="tile_5_5" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 255)
+
+[node name="tile_0_6" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 306)
+
+[node name="tile_1_6" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 306)
+
+[node name="tile_2_6" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 306)
+symbol = 2
+
+[node name="tile_3_6" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 306)
+symbol = 3
+
+[node name="tile_4_6" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 306)
+symbol = 2
+
+[node name="tile_5_6" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 306)
+
+[node name="tile_6_0" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 0)
+symbol = 3
+
+[node name="tile_6_1" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 51)
+symbol = 2
+
+[node name="tile_6_2" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 102)
+
+[node name="tile_6_3" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 153)
+
+[node name="tile_6_4" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 204)
+symbol = 1
+
+[node name="tile_6_5" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 255)
+
+[node name="tile_6_6" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 306)
+
+[node name="tile_0_7" type="Node2D" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 357)
+script = ExtResource("4_pu4yq")
+symbol = 2
+
+[node name="tile_1_7" type="Node2D" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 357)
+script = ExtResource("4_pu4yq")
+
+[node name="tile_2_7" type="Node2D" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 357)
+script = ExtResource("4_pu4yq")
+
+[node name="tile_3_7" type="Node2D" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 357)
+script = ExtResource("4_pu4yq")
+symbol = 3
+
+[node name="tile_4_7" type="Node2D" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 357)
+script = ExtResource("4_pu4yq")
+
+[node name="tile_5_7" type="Node2D" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 357)
+script = ExtResource("4_pu4yq")
+
+[node name="tile_6_7" type="Node2D" parent="Mirror3" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 357)
+script = ExtResource("4_pu4yq")
+symbol = 3
+
+[node name="Mirror4" parent="." instance=ExtResource("3_t4ffh")]
+position = Vector2(332, 2847)
+width = 9
+height = 10
+symmetry = true
+
+[node name="tile_0_0" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+symbol = 3
+
+[node name="tile_0_1" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 51)
+symbol = 1
+
+[node name="tile_1_0" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 0)
+
+[node name="tile_1_1" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 51)
+
+[node name="tile_2_0" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 0)
+symbol = 3
+
+[node name="tile_2_1" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 51)
+
+[node name="tile_3_0" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 0)
+symbol = 3
+
+[node name="tile_3_1" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 51)
+
+[node name="tile_4_0" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 0)
+symbol = 3
+
+[node name="tile_4_1" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 51)
+symbol = 3
+
+[node name="tile_5_0" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 0)
+symbol = 3
+
+[node name="tile_5_1" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 51)
+symbol = 4
+
+[node name="tile_0_2" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 102)
+symbol = 3
+
+[node name="tile_1_2" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 102)
+
+[node name="tile_2_2" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 102)
+symbol = 3
+
+[node name="tile_3_2" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 102)
+
+[node name="tile_4_2" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 102)
+symbol = 3
+
+[node name="tile_5_2" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 102)
+
+[node name="tile_0_3" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 153)
+
+[node name="tile_1_3" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 153)
+symbol = 4
+
+[node name="tile_2_3" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 153)
+
+[node name="tile_3_3" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 153)
+
+[node name="tile_4_3" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 153)
+symbol = 3
+
+[node name="tile_5_3" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 153)
+
+[node name="tile_0_4" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 204)
+
+[node name="tile_1_4" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 204)
+
+[node name="tile_2_4" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 204)
+symbol = 3
+
+[node name="tile_3_4" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 204)
+
+[node name="tile_4_4" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 204)
+symbol = 3
+
+[node name="tile_5_4" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 204)
+
+[node name="tile_0_5" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 255)
+symbol = 3
+
+[node name="tile_1_5" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 255)
+
+[node name="tile_2_5" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 255)
+
+[node name="tile_3_5" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 255)
+symbol = 1
+
+[node name="tile_4_5" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 255)
+symbol = 3
+
+[node name="tile_5_5" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 255)
+symbol = 3
+
+[node name="tile_0_6" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 306)
+
+[node name="tile_1_6" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 306)
+
+[node name="tile_2_6" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 306)
+
+[node name="tile_3_6" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 306)
+
+[node name="tile_4_6" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 306)
+symbol = 3
+
+[node name="tile_5_6" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 306)
+
+[node name="tile_6_0" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 0)
+symbol = 3
+
+[node name="tile_6_1" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 51)
+
+[node name="tile_6_2" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 102)
+symbol = 2
+
+[node name="tile_6_3" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 153)
+
+[node name="tile_6_4" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 204)
+symbol = 1
+
+[node name="tile_6_5" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 255)
+
+[node name="tile_6_6" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 306)
+
+[node name="tile_0_7" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 357)
+
+[node name="tile_1_7" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 357)
+
+[node name="tile_2_7" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 357)
+
+[node name="tile_3_7" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 357)
+
+[node name="tile_4_7" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 357)
+symbol = 3
+
+[node name="tile_5_7" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 357)
+
+[node name="tile_6_7" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 357)
+
+[node name="tile_7_0" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(357, 0)
+script = ExtResource("4_pu4yq")
+
+[node name="tile_7_1" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(357, 51)
+script = ExtResource("4_pu4yq")
+
+[node name="tile_7_2" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(357, 102)
+script = ExtResource("4_pu4yq")
+
+[node name="tile_7_3" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(357, 153)
+script = ExtResource("4_pu4yq")
+
+[node name="tile_7_4" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(357, 204)
+script = ExtResource("4_pu4yq")
+
+[node name="tile_7_5" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(357, 255)
+script = ExtResource("4_pu4yq")
+
+[node name="tile_7_6" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(357, 306)
+script = ExtResource("4_pu4yq")
+
+[node name="tile_7_7" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(357, 357)
+script = ExtResource("4_pu4yq")
+
+[node name="tile_0_8" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 408)
+script = ExtResource("4_pu4yq")
+
+[node name="tile_1_8" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 408)
+script = ExtResource("4_pu4yq")
+
+[node name="tile_2_8" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 408)
+script = ExtResource("4_pu4yq")
+
+[node name="tile_3_8" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 408)
+script = ExtResource("4_pu4yq")
+symbol = 2
+
+[node name="tile_4_8" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 408)
+script = ExtResource("4_pu4yq")
+symbol = 3
+
+[node name="tile_5_8" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 408)
+script = ExtResource("4_pu4yq")
+symbol = 3
+
+[node name="tile_6_8" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 408)
+script = ExtResource("4_pu4yq")
+
+[node name="tile_7_8" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(357, 408)
+script = ExtResource("4_pu4yq")
+
+[node name="tile_8_0" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(408, 0)
+script = ExtResource("4_pu4yq")
+symbol = 3
+
+[node name="tile_8_1" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(408, 51)
+script = ExtResource("4_pu4yq")
+symbol = 3
+
+[node name="tile_8_2" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(408, 102)
+script = ExtResource("4_pu4yq")
+symbol = 3
+
+[node name="tile_8_3" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(408, 153)
+script = ExtResource("4_pu4yq")
+
+[node name="tile_8_4" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(408, 204)
+script = ExtResource("4_pu4yq")
+
+[node name="tile_8_5" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(408, 255)
+script = ExtResource("4_pu4yq")
+symbol = 3
+
+[node name="tile_8_6" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(408, 306)
+script = ExtResource("4_pu4yq")
+symbol = 4
+
+[node name="tile_8_7" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(408, 357)
+script = ExtResource("4_pu4yq")
+
+[node name="tile_8_8" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(408, 408)
+script = ExtResource("4_pu4yq")
+
+[node name="tile_0_9" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 459)
+script = ExtResource("4_pu4yq")
+symbol = 4
+
+[node name="tile_1_9" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 459)
+script = ExtResource("4_pu4yq")
+symbol = 3
+
+[node name="tile_2_9" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 459)
+script = ExtResource("4_pu4yq")
+symbol = 3
+
+[node name="tile_3_9" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 459)
+script = ExtResource("4_pu4yq")
+symbol = 3
+
+[node name="tile_4_9" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 459)
+script = ExtResource("4_pu4yq")
+symbol = 3
+
+[node name="tile_5_9" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 459)
+script = ExtResource("4_pu4yq")
+symbol = 3
+
+[node name="tile_6_9" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(306, 459)
+script = ExtResource("4_pu4yq")
+symbol = 3
+
+[node name="tile_7_9" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(357, 459)
+script = ExtResource("4_pu4yq")
+symbol = 3
+
+[node name="tile_8_9" type="Node2D" parent="Mirror4" instance=ExtResource("4_dhyxt")]
+position = Vector2(408, 459)
+script = ExtResource("4_pu4yq")
+
 [node name="Player" parent="." instance=ExtResource("2_8mmqv")]
 position = Vector2(555, -1527)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 4795.0
+offset_top = 265.0
+offset_right = 4960.0
+offset_bottom = 392.0
+text = "Encuentras una nota.
+
+\"Rompe el espejo.\"
+
+(Doble click)
+(P para despertar)"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 3910.0
+offset_top = 522.0
+offset_right = 4110.0
+offset_bottom = 545.0
+text = "R para Resetear un puzzle"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 483.0
+offset_top = 3461.0
+offset_right = 648.0
+offset_bottom = 3614.0
+text = "Uno del primero
+Dos del segundo
+Dos del tercero
+Cinco del cuarto
+
+(P para despertar)"
+horizontal_alignment = 1

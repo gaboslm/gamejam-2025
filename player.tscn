@@ -15,5 +15,7 @@ position = Vector2(0, 22.5)
 shape = SubResource("RectangleShape2D_mwb40")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, 21)
 scale = Vector2(3, 3)
 texture = ExtResource("2_onrkg")
+offset = Vector2(0, -8)

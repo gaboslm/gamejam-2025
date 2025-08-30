@@ -13,6 +13,7 @@ enum SYMBOLS {
 }
 
 var is_pressed := false
+var force_coll := false
 
 @export
 var symbol := SYMBOLS.None
@@ -24,7 +25,7 @@ func _process(delta: float) -> void:
 		$Sprite.texture = preload("res://assets/puzzletile.png")
 	
 	$Symbol.visible = symbol != SYMBOLS.None
-	$StaticBody2D/CollisionShape2D.disabled = symbol != SYMBOLS.Wall
+	$StaticBody2D/CollisionShape2D.disabled = symbol != SYMBOLS.Wall and symbol != SYMBOLS.WhiteSquare and symbol != SYMBOLS.BlackSquare and !force_coll
 	match symbol:
 		SYMBOLS.BlackSquare:
 			$Symbol.texture = preload("res://assets/blacktile.png")
