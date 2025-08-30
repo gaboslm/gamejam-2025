@@ -1,15 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2x6a26j8nw1u"]
+[gd_scene load_steps=2 format=3 uid="uid://b2x6a26j8nw1u"]
 
-[ext_resource type="Script" uid="uid://popyalsi0igr" path="res://player.gd" id="1_80nbo"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mwb40"]
+[ext_resource type="PackedScene" uid="uid://dh3dxqp3ui4ds" path="res://player.tscn" id="1_80nbo"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Player" type="CharacterBody2D" parent="."]
-script = ExtResource("1_80nbo")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("RectangleShape2D_mwb40")
-
-[node name="Sprite" type="Sprite2D" parent="Player"]
+[node name="Player" parent="." instance=ExtResource("1_80nbo")]
