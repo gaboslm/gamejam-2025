@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const MAX_VEL := 110.0
+const MAX_VEL := 200.0
 
 func _process(delta: float):
 	var gamma := 60.0 * delta

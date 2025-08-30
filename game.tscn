@@ -1,7 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://b2x6a26j8nw1u"]
+[gd_scene load_steps=14 format=4 uid="uid://b2x6a26j8nw1u"]
 
 [ext_resource type="PackedScene" uid="uid://dh3dxqp3ui4ds" path="res://player.tscn" id="1_80nbo"]
 [ext_resource type="Texture2D" uid="uid://37kd3wd24w5q" path="res://assets/wood.png" id="2_e2o6t"]
+[ext_resource type="Texture2D" uid="uid://cl1m628ibl4xd" path="res://assets/bed.png" id="3_feb5d"]
+[ext_resource type="Texture2D" uid="uid://boc2xy3dqiq60" path="res://assets/bookshelf.png" id="4_fc0e3"]
+[ext_resource type="Script" uid="uid://dhp16d1me46ue" path="res://inspectable.gd" id="5_7jktm"]
+[ext_resource type="Script" uid="uid://cpjgq3e41vx7l" path="res://inspect_bed.gd" id="6_ryrav"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feb5d"]
 resource_name = "Wood"
@@ -11,14 +15,20 @@ texture = ExtResource("2_e2o6t")
 [sub_resource type="TileSet" id="TileSet_fc0e3"]
 sources/0 = SubResource("TileSetAtlasSource_feb5d")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2o6t"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jktm"]
 size = Vector2(60, 482.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryrav"]
+size = Vector2(111, 173)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fc0e3"]
 size = Vector2(60, 482.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_feb5d"]
 size = Vector2(978, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eow3j"]
+size = Vector2(159, 241)
 
 [node name="Node2D" type="Node2D"]
 
@@ -31,7 +41,11 @@ tile_set = SubResource("TileSet_fc0e3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldC"]
 position = Vector2(210, 329)
-shape = SubResource("RectangleShape2D_e2o6t")
+shape = SubResource("RectangleShape2D_7jktm")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="WorldC"]
+position = Vector2(299.5, 435.5)
+shape = SubResource("RectangleShape2D_ryrav")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="WorldC"]
 position = Vector2(990, 319)
@@ -47,3 +61,28 @@ shape = SubResource("RectangleShape2D_feb5d")
 
 [node name="Player" parent="." instance=ExtResource("1_80nbo")]
 position = Vector2(586, 327)
+
+[node name="Bed" type="Sprite2D" parent="."]
+position = Vector2(244, 324)
+scale = Vector2(3, 3)
+texture = ExtResource("3_feb5d")
+centered = false
+
+[node name="Bookshelf" type="Sprite2D" parent="."]
+position = Vector2(387, 9)
+scale = Vector2(3, 3)
+texture = ExtResource("4_fc0e3")
+centered = false
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("5_7jktm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(302.5, 422.5)
+shape = SubResource("RectangleShape2D_eow3j")
+
+[node name="Inspected" type="Node" parent="Area2D"]
+script = ExtResource("6_ryrav")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
