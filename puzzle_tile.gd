@@ -1,6 +1,8 @@
 @tool
 extends Node2D
 
+class_name PuzzleTile
+
 enum SYMBOLS {
 	None,
 	BlackSquare,
@@ -10,13 +12,13 @@ enum SYMBOLS {
 	End
 }
 
-var pressed := false
+var is_pressed := false
 
 @export
 var symbol := SYMBOLS.None
 
 func _process(delta: float) -> void:
-	if pressed:
+	if is_pressed:
 		$Sprite.texture = preload("res://assets/puzzlepressed.png")
 	else:
 		$Sprite.texture = preload("res://assets/puzzletile.png")
@@ -34,3 +36,7 @@ func _process(delta: float) -> void:
 			$Symbol.texture = preload("res://assets/start.png")
 		SYMBOLS.End:
 			$Symbol.texture = preload("res://assets/end.png")
+
+
+func flash():
+	$AnimationPlayer.play("flash")
