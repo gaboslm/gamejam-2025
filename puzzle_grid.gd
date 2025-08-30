@@ -61,12 +61,31 @@ func game(delta: float) -> void:
 func puzzle_check():
 	var player: CharacterBody2D = $"../Player"
 	var failures = []
-	for child: PuzzleTile in self.get_children():
-		match child.symbol:
-			PuzzleTile.SYMBOLS.Start:
-				if !child.is_pressed:
-					failures.append(child)
-	
+	for x in width:
+		for y in height:
+			var name := "tile_" + str(x) + "_" + str(y)
+			var child = self.get_node(name)
+			match child.symbol:
+				PuzzleTile.SYMBOLS.Start:
+					if !child.is_pressed:
+						failures.append(child)
+				PuzzleTile.SYMBOLS.WhiteSquare:
+					var already_checked = []
+					var to_check = [Vector2i(x, y)]
+					for checking in to_check:
+						already_checked.append(checking)
+						var other := "tile_" + str(checking.x) + "_" + str(checking.y)
+						var other_child = self.get_node(other)
+						other_child.modulate = Color.AQUA
+						if other_child.symbol == PuzzleTile.SYMBOLS.BlackSquare:
+							print(checking)
+							failures.append(child)
+							break
+						for nb in get_neighbors(x, y):
+							if already_checked.has(nb):
+								continue
+							else:
+								to_check.append(nb)
 	if !failures.is_empty():
 		player.position = starting_position
 		for failure in failures:
@@ -77,3 +96,24 @@ func puzzle_check():
 		solved = true
 		
 	
+func get_neighbors(xo: int, yo: int) -> Array:
+	var neighbors = []
+	for x in range(-1, 2):
+		for y in range(-1, 2):
+			if x == 0 and y == 0:
+				continue
+			var xi = x + xo
+			var yi = y + yo
+			
+			if xi < 0:
+				continue
+			if xi >= width:
+				continue
+			if yi < 0:
+				continue
+			if yi >= height:
+				continue
+			neighbors.append(Vector2i(xi, yi))
+			
+	return neighbors
+			

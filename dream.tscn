@@ -1,10 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://dl6w87awujuty"]
+[gd_scene load_steps=11 format=3 uid="uid://dl6w87awujuty"]
 
 [ext_resource type="Texture2D" uid="uid://37kd3wd24w5q" path="res://assets/wood.png" id="1_pu4yq"]
 [ext_resource type="PackedScene" uid="uid://dh3dxqp3ui4ds" path="res://player.tscn" id="2_8mmqv"]
 [ext_resource type="PackedScene" uid="uid://v3oupo0c04c4" path="res://puzzle_grid.tscn" id="3_t4ffh"]
 [ext_resource type="PackedScene" uid="uid://cl06vl1fjxnp1" path="res://puzzle_tile.tscn" id="4_dhyxt"]
-[ext_resource type="Script" uid="uid://dfv3ncweevxpp" path="res://puzzle_tile.gd" id="5_pu4yq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feb5d"]
 resource_name = "Wood"
@@ -24,7 +23,7 @@ size = Vector2(52, 1252.25)
 size = Vector2(60, 482.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_feb5d"]
-size = Vector2(978, 28)
+size = Vector2(469, 33)
 
 [node name="Node2D" type="Node2D"]
 
@@ -59,19 +58,19 @@ position = Vector2(752, -46)
 shape = SubResource("RectangleShape2D_fc0e3")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="WorldC"]
-position = Vector2(1220, 181)
+position = Vector2(965.5, 178.5)
 shape = SubResource("RectangleShape2D_feb5d")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="WorldC"]
-position = Vector2(1213, 470)
+position = Vector2(961, 472)
 shape = SubResource("RectangleShape2D_feb5d")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="WorldC"]
-position = Vector2(-88, 475)
+position = Vector2(155, 477)
 shape = SubResource("RectangleShape2D_feb5d")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="WorldC"]
-position = Vector2(-85, 181)
+position = Vector2(172, 176)
 shape = SubResource("RectangleShape2D_feb5d")
 
 [node name="Puzzle1" parent="." instance=ExtResource("3_t4ffh")]
@@ -374,67 +373,199 @@ position = Vector2(306, 102)
 [node name="tile_6_3" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
 position = Vector2(306, 153)
 
-[node name="tile_0_4" type="Node2D" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
+[node name="tile_0_4" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
 position = Vector2(0, 204)
-script = ExtResource("5_pu4yq")
 
-[node name="tile_1_4" type="Node2D" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
+[node name="tile_1_4" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
 position = Vector2(51, 204)
-script = ExtResource("5_pu4yq")
 
-[node name="tile_2_4" type="Node2D" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
+[node name="tile_2_4" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
 position = Vector2(102, 204)
-script = ExtResource("5_pu4yq")
 
-[node name="tile_3_4" type="Node2D" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
+[node name="tile_3_4" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
 position = Vector2(153, 204)
-script = ExtResource("5_pu4yq")
 
-[node name="tile_4_4" type="Node2D" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
+[node name="tile_4_4" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
 position = Vector2(204, 204)
-script = ExtResource("5_pu4yq")
 
-[node name="tile_5_4" type="Node2D" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
+[node name="tile_5_4" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
 position = Vector2(255, 204)
-script = ExtResource("5_pu4yq")
 
-[node name="tile_6_4" type="Node2D" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
+[node name="tile_6_4" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
 position = Vector2(306, 204)
-script = ExtResource("5_pu4yq")
 
-[node name="tile_0_5" type="Node2D" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
+[node name="tile_0_5" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
 position = Vector2(0, 255)
-script = ExtResource("5_pu4yq")
 symbol = 3
 
-[node name="tile_1_5" type="Node2D" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
+[node name="tile_1_5" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
 position = Vector2(51, 255)
-script = ExtResource("5_pu4yq")
 symbol = 3
 
-[node name="tile_2_5" type="Node2D" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
+[node name="tile_2_5" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
 position = Vector2(102, 255)
-script = ExtResource("5_pu4yq")
 symbol = 3
 
-[node name="tile_3_5" type="Node2D" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
+[node name="tile_3_5" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
 position = Vector2(153, 255)
-script = ExtResource("5_pu4yq")
 symbol = 4
 
-[node name="tile_4_5" type="Node2D" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
+[node name="tile_4_5" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
 position = Vector2(204, 255)
-script = ExtResource("5_pu4yq")
 symbol = 3
 
-[node name="tile_5_5" type="Node2D" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
+[node name="tile_5_5" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
 position = Vector2(255, 255)
-script = ExtResource("5_pu4yq")
 symbol = 3
 
-[node name="tile_6_5" type="Node2D" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
+[node name="tile_6_5" parent="Puzzle3" instance=ExtResource("4_dhyxt")]
 position = Vector2(306, 255)
-script = ExtResource("5_pu4yq")
+symbol = 3
+
+[node name="Puzzle4" parent="." instance=ExtResource("3_t4ffh")]
+position = Vector2(1220, 157)
+width = 6
+height = 7
+
+[node name="tile_0_0" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+symbol = 3
+
+[node name="tile_0_1" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 51)
+symbol = 3
+
+[node name="tile_1_0" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 0)
+
+[node name="tile_1_1" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 51)
+
+[node name="tile_2_0" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 0)
+
+[node name="tile_2_1" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 51)
+symbol = 1
+
+[node name="tile_3_0" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 0)
+
+[node name="tile_3_1" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 51)
+
+[node name="tile_4_0" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 0)
+
+[node name="tile_4_1" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 51)
+
+[node name="tile_5_0" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 0)
+symbol = 3
+
+[node name="tile_5_1" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 51)
+symbol = 3
+
+[node name="tile_0_2" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 102)
+symbol = 3
+
+[node name="tile_1_2" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 102)
+
+[node name="tile_2_2" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 102)
+
+[node name="tile_3_2" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 102)
+
+[node name="tile_4_2" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 102)
+
+[node name="tile_5_2" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 102)
+symbol = 3
+
+[node name="tile_0_3" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 153)
+symbol = 4
+
+[node name="tile_1_3" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 153)
+
+[node name="tile_2_3" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 153)
+
+[node name="tile_3_3" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 153)
+
+[node name="tile_4_3" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 153)
+
+[node name="tile_5_3" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 153)
+symbol = 4
+
+[node name="tile_0_4" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 204)
+symbol = 3
+
+[node name="tile_1_4" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 204)
+
+[node name="tile_2_4" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 204)
+
+[node name="tile_3_4" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 204)
+
+[node name="tile_4_4" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 204)
+
+[node name="tile_5_4" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 204)
+symbol = 3
+
+[node name="tile_0_5" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 255)
+symbol = 3
+
+[node name="tile_1_5" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 255)
+
+[node name="tile_2_5" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 255)
+
+[node name="tile_3_5" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 255)
+symbol = 2
+
+[node name="tile_4_5" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 255)
+
+[node name="tile_5_5" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 255)
+symbol = 3
+
+[node name="tile_0_6" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(0, 306)
+symbol = 3
+
+[node name="tile_1_6" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(51, 306)
+
+[node name="tile_2_6" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(102, 306)
+
+[node name="tile_3_6" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(153, 306)
+
+[node name="tile_4_6" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(204, 306)
+
+[node name="tile_5_6" parent="Puzzle4" instance=ExtResource("4_dhyxt")]
+position = Vector2(255, 306)
 symbol = 3
 
 [node name="Player" parent="." instance=ExtResource("2_8mmqv")]
