@@ -4,7 +4,7 @@ const MAX_VEL := 200.0
 
 func _process(delta: float):
 	var gamma := 60.0 * delta
-	var delta_lerp = gamma * 0.2
+	var delta_lerp = 0.2
 	
 	if Input.is_key_pressed(KEY_D):
 		self.velocity.x = lerp(self.velocity.x, MAX_VEL, delta_lerp)
@@ -20,7 +20,7 @@ func _process(delta: float):
 	else:
 		self.velocity.y = lerp(self.velocity.y, 0.0, delta_lerp * 2.0)
 	
-	if self.velocity.length() > MAX_VEL:
-		self.velocity = self.velocity.normalized() * MAX_VEL
+	#if self.velocity.length() > MAX_VEL:
+		#self.velocity = self.velocity.normalized() * MAX_VEL
 	
 	move_and_slide()

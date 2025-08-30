@@ -16,6 +16,9 @@ var is_pressed := false
 var force_coll := false
 
 @export
+var force_must_press := false
+
+@export
 var symbol := SYMBOLS.None
 
 func _process(delta: float) -> void:
@@ -23,6 +26,11 @@ func _process(delta: float) -> void:
 		$Sprite.texture = preload("res://assets/puzzlepressed.png")
 	else:
 		$Sprite.texture = preload("res://assets/puzzletile.png")
+	
+	if force_must_press and Engine.is_editor_hint():
+		self.modulate = Color.BLUE
+	else:
+		self.modulate = Color.WHITE
 	
 	$Symbol.visible = symbol != SYMBOLS.None
 	$StaticBody2D/CollisionShape2D.disabled = symbol != SYMBOLS.Wall and symbol != SYMBOLS.WhiteSquare and symbol != SYMBOLS.BlackSquare and !force_coll
@@ -40,6 +48,8 @@ func _process(delta: float) -> void:
 
 
 func flash():
+	if force_must_press:
+		return
 	$AnimationPlayer.play("flash")
 	if symbol == SYMBOLS.BlackSquare:
 		$AnimationPlayer2.play("flash")

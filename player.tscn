@@ -11,11 +11,11 @@ motion_mode = 1
 script = ExtResource("1_4flbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 22.5)
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_mwb40")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(0, 21)
+position = Vector2(0, -2)
 scale = Vector2(3, 3)
 texture = ExtResource("2_onrkg")
 offset = Vector2(0, -8)

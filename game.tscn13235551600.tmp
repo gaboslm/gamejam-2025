@@ -1,12 +1,8 @@
-[gd_scene load_steps=28 format=4 uid="uid://b2x6a26j8nw1u"]
+[gd_scene load_steps=20 format=4 uid="uid://b2x6a26j8nw1u"]
 
 [ext_resource type="PackedScene" uid="uid://dh3dxqp3ui4ds" path="res://player.tscn" id="1_80nbo"]
-[ext_resource type="Texture2D" uid="uid://066333no1x36" path="res://assets/puerta.png" id="2_215e1"]
 [ext_resource type="Texture2D" uid="uid://37kd3wd24w5q" path="res://assets/wood.png" id="2_e2o6t"]
-[ext_resource type="Texture2D" uid="uid://de7m640xmxpnb" path="res://assets/huellas.png" id="2_lc2xo"]
-[ext_resource type="Texture2D" uid="uid://dxunbopwneagl" path="res://assets/huellas_up.png" id="3_215e1"]
 [ext_resource type="Texture2D" uid="uid://cl1m628ibl4xd" path="res://assets/bed.png" id="3_feb5d"]
-[ext_resource type="Texture2D" uid="uid://dotph1gg6mcyp" path="res://assets/huellas_right.png" id="4_7sc4i"]
 [ext_resource type="Texture2D" uid="uid://boc2xy3dqiq60" path="res://assets/bookshelf.png" id="4_fc0e3"]
 [ext_resource type="Script" uid="uid://dhp16d1me46ue" path="res://inspectable.gd" id="5_7jktm"]
 [ext_resource type="Script" uid="uid://bu5j3ijs2tcyi" path="res://mirror.gd" id="5_vef74"]
@@ -22,23 +18,6 @@ texture = ExtResource("2_e2o6t")
 
 [sub_resource type="TileSet" id="TileSet_fc0e3"]
 sources/0 = SubResource("TileSetAtlasSource_feb5d")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_80cx4"]
-texture = ExtResource("2_lc2xo")
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e8heu"]
-texture = ExtResource("3_215e1")
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rvswv"]
-texture = ExtResource("4_7sc4i")
-0:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_boyg6"]
-sources/0 = SubResource("TileSetAtlasSource_80cx4")
-sources/1 = SubResource("TileSetAtlasSource_e8heu")
-sources/2 = SubResource("TileSetAtlasSource_rvswv")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7jktm"]
 size = Vector2(60, 482.5)
@@ -67,16 +46,6 @@ size = Vector2(159, 241)
 scale = Vector2(3, 3)
 tile_map_data = PackedByteArray("AAAFAAQAAAAAAAAAAAAFAAUAAAAAAAAAAAAFAAYAAAAAAAAAAAAFAAcAAAAAAAAAAAAFAAgAAAAAAAAAAAAFAAkAAAAAAAAAAAAGAAQAAAAAAAAAAAAGAAUAAAAAAAAAAAAGAAYAAAAAAAAAAAAGAAcAAAAAAAAAAAAGAAgAAAAAAAAAAAAGAAkAAAAAAAAAAAAHAAQAAAAAAAAAAAAHAAUAAAAAAAAAAAAHAAYAAAAAAAAAAAAHAAcAAAAAAAAAAAAHAAgAAAAAAAAAAAAHAAkAAAAAAAAAAAAFAAoAAAAAAAAAAAAGAAoAAAAAAAAAAAAHAAoAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAUAAAAAAAAAAAAIAAYAAAAAAAAAAAAIAAcAAAAAAAAAAAAIAAgAAAAAAAAAAAAIAAkAAAAAAAAAAAAIAAoAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAUAAAAAAAAAAAAJAAYAAAAAAAAAAAAJAAcAAAAAAAAAAAAJAAgAAAAAAAAAAAAJAAkAAAAAAAAAAAAJAAoAAAAAAAAAAAAKAAQAAAAAAAAAAAAKAAUAAAAAAAAAAAAKAAYAAAAAAAAAAAAKAAcAAAAAAAAAAAAKAAgAAAAAAAAAAAAKAAkAAAAAAAAAAAAKAAoAAAAAAAAAAAALAAQAAAAAAAAAAAALAAUAAAAAAAAAAAALAAYAAAAAAAAAAAALAAcAAAAAAAAAAAALAAgAAAAAAAAAAAALAAkAAAAAAAAAAAALAAoAAAAAAAAAAAAMAAQAAAAAAAAAAAAMAAUAAAAAAAAAAAAMAAYAAAAAAAAAAAAMAAcAAAAAAAAAAAAMAAgAAAAAAAAAAAAMAAkAAAAAAAAAAAAMAAoAAAAAAAAAAAANAAQAAAAAAAAAAAANAAUAAAAAAAAAAAANAAYAAAAAAAAAAAANAAcAAAAAAAAAAAANAAgAAAAAAAAAAAANAAkAAAAAAAAAAAANAAoAAAAAAAAAAAAOAAQAAAAAAAAAAAAOAAUAAAAAAAAAAAAOAAYAAAAAAAAAAAAOAAcAAAAAAAAAAAAOAAgAAAAAAAAAAAAOAAkAAAAAAAAAAAAOAAoAAAAAAAAAAAAPAAQAAAAAAAAAAAAPAAUAAAAAAAAAAAAPAAYAAAAAAAAAAAAPAAcAAAAAAAAAAAAPAAgAAAAAAAAAAAAPAAkAAAAAAAAAAAAPAAoAAAAAAAAAAAAQAAQAAAAAAAAAAAAQAAUAAAAAAAAAAAAQAAYAAAAAAAAAAAAQAAcAAAAAAAAAAAAQAAgAAAAAAAAAAAAQAAkAAAAAAAAAAAAQAAoAAAAAAAAAAAARAAQAAAAAAAAAAAARAAUAAAAAAAAAAAARAAYAAAAAAAAAAAARAAcAAAAAAAAAAAARAAgAAAAAAAAAAAARAAkAAAAAAAAAAAARAAoAAAAAAAAAAAASAAQAAAAAAAAAAAASAAUAAAAAAAAAAAASAAYAAAAAAAAAAAASAAcAAAAAAAAAAAASAAgAAAAAAAAAAAASAAkAAAAAAAAAAAASAAoAAAAAAAAAAAATAAQAAAAAAAAAAAATAAUAAAAAAAAAAAATAAYAAAAAAAAAAAATAAcAAAAAAAAAAAATAAgAAAAAAAAAAAATAAkAAAAAAAAAAAATAAoAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_fc0e3")
-
-[node name="Puerta" type="Sprite2D" parent="."]
-position = Vector2(848, 86)
-scale = Vector2(3, 3)
-texture = ExtResource("2_215e1")
-
-[node name="World2" type="TileMapLayer" parent="."]
-scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAAPAAoAAQAAAAAAAAAPAAkAAQAAAAAAAAAPAAgAAAAAAAAAAAAPAAYAAgAAAAAAAAAOAAgAAAAAAAAAAAANAAgAAQAAAAAAAAANAAcAAQAAAAAAAAANAAYAAgAAAAAAAAAOAAYAAgAAAAAAAAAQAAYAAgAAAAAAAAARAAYAAgAAAAAAAAASAAYAAQAAAAAAAAASAAUAAQAAAAAAAAASAAQAAQAAAAAAAAA=")
-tile_set = SubResource("TileSet_boyg6")
 
 [node name="WorldC" type="StaticBody2D" parent="."]
 
@@ -178,7 +147,6 @@ script = ExtResource("10_hve3p")
 
 [node name="Button" type="Button" parent="CanvasLayer/Control/Mirror"]
 modulate = Color(1, 1, 1, 0)
-layout_mode = 0
 offset_left = -4.0
 offset_top = 11.0
 offset_right = 203.0

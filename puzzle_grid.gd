@@ -51,7 +51,7 @@ func game(delta: float) -> void:
 	elif is_inside and !solved:
 		var player_pos = player.global_position - global_position
 		var x = ((player_pos.x) as int / (17 * 3))
-		var y = ((player_pos.y + 17 * 1.5) as int / (17 * 3))
+		var y = ((player_pos.y) as int / (17 * 3))
 		var name := "tile_" + str(x) + "_" + str(y)
 		var node = get_node_or_null(name)
 		if node:
@@ -71,11 +71,18 @@ func game(delta: float) -> void:
 func puzzle_check():
 	var player: CharacterBody2D = $"../Player"
 	var failures = []
+	var allowed_fails = []
+	
 	for x in width:
 		for y in height:
 			var name := "tile_" + str(x) + "_" + str(y)
 			var child = self.get_node(name)
 			match child.symbol:
+				PuzzleTile.SYMBOLS.None:
+					if child.force_must_press and !child.is_pressed:
+						failures.append(child)
+				PuzzleTile.SYMBOLS.End:
+					allowed_fails.append(child)
 				PuzzleTile.SYMBOLS.Start:
 					if !child.is_pressed:
 						failures.append(child)
@@ -121,9 +128,19 @@ func puzzle_check():
 								continue
 							else:
 								to_check.append(nb)
-	if !failures.is_empty():
+	
+	var real_failures = []
+	for failure in allowed_fails:
+		var error = failures.pop_back()
+		if !error:
+			real_failures.append(failure)
+			print("what??")
+	real_failures.append_array(failures)
+			
+	
+	if !real_failures.is_empty():
 		player.position = starting_position
-		for failure in failures:
+		for failure in real_failures:
 			failure.flash()
 		for child in self.get_children():
 			child.is_pressed = false
