@@ -49,7 +49,6 @@ func game(delta: float) -> void:
 		var player_pos = player.global_position - global_position
 		var x = ((player_pos.x) as int / (17 * 3))
 		var y = ((player_pos.y + 17 * 1.5) as int / (17 * 3))
-		print(x, y)
 		var name := "tile_" + str(x) + "_" + str(y)
 		var node = get_node_or_null(name)
 		if node:
