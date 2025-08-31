@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://b2x6a26j8nw1u"]
+[gd_scene load_steps=40 format=4 uid="uid://b2x6a26j8nw1u"]
 
 [ext_resource type="PackedScene" uid="uid://dh3dxqp3ui4ds" path="res://player.tscn" id="1_80nbo"]
 [ext_resource type="Texture2D" uid="uid://066333no1x36" path="res://assets/puerta.png" id="2_215e1"]
@@ -8,12 +8,21 @@
 [ext_resource type="Texture2D" uid="uid://cl1m628ibl4xd" path="res://assets/bed.png" id="3_feb5d"]
 [ext_resource type="Texture2D" uid="uid://dotph1gg6mcyp" path="res://assets/huellas_right.png" id="4_7sc4i"]
 [ext_resource type="Texture2D" uid="uid://boc2xy3dqiq60" path="res://assets/bookshelf.png" id="4_fc0e3"]
+[ext_resource type="Script" uid="uid://bpwwlhqp3uq3o" path="res://door.gd" id="4_qhcbd"]
 [ext_resource type="Script" uid="uid://dhp16d1me46ue" path="res://inspectable.gd" id="5_7jktm"]
 [ext_resource type="Script" uid="uid://bu5j3ijs2tcyi" path="res://mirror.gd" id="5_vef74"]
 [ext_resource type="Script" uid="uid://cpjgq3e41vx7l" path="res://inspect_bed.gd" id="6_ryrav"]
 [ext_resource type="Texture2D" uid="uid://b0acek3tsekrd" path="res://assets/mirror.png" id="7_eow3j"]
+[ext_resource type="Script" uid="uid://brn37pbfm3ka" path="res://shelfinspect.gd" id="8_hb5m1"]
 [ext_resource type="Texture2D" uid="uid://daktcfs8t3tc4" path="res://assets/mirror_itm.png" id="8_j5wjh"]
 [ext_resource type="Script" uid="uid://bwkuw8yhtbjqj" path="res://mirrorgui.gd" id="10_hve3p"]
+[ext_resource type="Script" uid="uid://c2vataxwdmrry" path="res://keys.gd" id="11_x5p1p"]
+[ext_resource type="Texture2D" uid="uid://cl7yvne15an4l" path="res://assets/shelf/bg.png" id="15_e8heu"]
+[ext_resource type="Texture2D" uid="uid://dr8bxh3y875vy" path="res://assets/shelf/booktopl.png" id="16_boyg6"]
+[ext_resource type="Script" uid="uid://dxp2v64kl78qy" path="res://shelf.gd" id="16_e36ub"]
+[ext_resource type="Script" uid="uid://dsey4wqpryu2n" path="res://shelfbook.gd" id="17_boyg6"]
+[ext_resource type="Texture2D" uid="uid://ba1qwhclepetu" path="res://assets/shelf/booktopm.png" id="18_e36ub"]
+[ext_resource type="Texture2D" uid="uid://dlx1twgdsfxk4" path="res://assets/shelf/bookbotm.png" id="19_hb5m1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feb5d"]
 resource_name = "Wood"
@@ -22,6 +31,9 @@ texture = ExtResource("2_e2o6t")
 
 [sub_resource type="TileSet" id="TileSet_fc0e3"]
 sources/0 = SubResource("TileSetAtlasSource_feb5d")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1jbl"]
+size = Vector2(169, 60.0001)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_80cx4"]
 texture = ExtResource("2_lc2xo")
@@ -56,7 +68,13 @@ size = Vector2(978, 28)
 size = Vector2(158, 69)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j5wjh"]
-size = Vector2(203.5, 62)
+size = Vector2(203.5, 46.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hb5m1"]
+size = Vector2(203.5, 27.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhcbd"]
+size = Vector2(72.9688, 37)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eow3j"]
 size = Vector2(159, 241)
@@ -72,6 +90,18 @@ tile_set = SubResource("TileSet_fc0e3")
 position = Vector2(848, 86)
 scale = Vector2(3, 3)
 texture = ExtResource("2_215e1")
+
+[node name="Area2D3" type="Area2D" parent="Puerta"]
+position = Vector2(-282.666, -28.6667)
+scale = Vector2(0.333333, 0.333333)
+script = ExtResource("5_7jktm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta/Area2D3"]
+position = Vector2(844.5, 184)
+shape = SubResource("RectangleShape2D_f1jbl")
+
+[node name="Inspected" type="Node" parent="Puerta/Area2D3"]
+script = ExtResource("4_qhcbd")
 
 [node name="World2" type="TileMapLayer" parent="."]
 scale = Vector2(3, 3)
@@ -110,6 +140,18 @@ scale = Vector2(3, 3)
 texture = ExtResource("4_fc0e3")
 centered = false
 
+[node name="Area2D3" type="Area2D" parent="Bookshelf"]
+position = Vector2(-129, -3)
+scale = Vector2(0.333333, 0.333333)
+script = ExtResource("5_7jktm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bookshelf/Area2D3"]
+position = Vector2(461.999, 251.75)
+shape = SubResource("RectangleShape2D_j5wjh")
+
+[node name="Inspected" type="Node" parent="Bookshelf/Area2D3"]
+script = ExtResource("8_hb5m1")
+
 [node name="MirrorItm" type="Sprite2D" parent="."]
 position = Vector2(313, 75)
 scale = Vector2(3, 3)
@@ -121,14 +163,30 @@ scale = Vector2(0.333333, 0.333333)
 script = ExtResource("5_7jktm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MirrorItm/Area2D2"]
-position = Vector2(292, 183)
-shape = SubResource("RectangleShape2D_j5wjh")
+position = Vector2(271.999, 192)
+shape = SubResource("RectangleShape2D_hb5m1")
 
 [node name="Inspected" type="Node" parent="MirrorItm/Area2D2"]
 script = ExtResource("5_vef74")
 
+[node name="Key" type="Node2D" parent="."]
+position = Vector2(313, 75)
+scale = Vector2(3, 3)
+
+[node name="Area2D2" type="Area2D" parent="Key"]
+position = Vector2(-104.333, -25)
+scale = Vector2(0.333333, 0.333333)
+script = ExtResource("5_7jktm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Key/Area2D2"]
+position = Vector2(527, 359.5)
+shape = SubResource("RectangleShape2D_qhcbd")
+
+[node name="Inspected" type="Node" parent="Key/Area2D2"]
+script = ExtResource("11_x5p1p")
+
 [node name="Player" parent="." instance=ExtResource("1_80nbo")]
-position = Vector2(586, 327)
+position = Vector2(410, 432)
 
 [node name="Bed" type="Sprite2D" parent="."]
 position = Vector2(244, 324)
@@ -142,7 +200,7 @@ scale = Vector2(0.333333, 0.333333)
 script = ExtResource("5_7jktm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bed/Area2D"]
-position = Vector2(302.5, 422.5)
+position = Vector2(296.5, 422.5)
 shape = SubResource("RectangleShape2D_eow3j")
 
 [node name="Inspected" type="Node" parent="Bed/Area2D"]
@@ -184,8 +242,444 @@ offset_top = 11.0
 offset_right = 203.0
 offset_bottom = 249.0
 
+[node name="Shelf" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 329.0
+offset_top = 21.0
+offset_right = 525.0
+offset_bottom = 266.0
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("15_e8heu")
+script = ExtResource("16_e36ub")
+
+[node name="Row1" type="Control" parent="CanvasLayer/Control/Shelf"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Booktopl" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row1"]
+layout_mode = 0
+offset_left = 14.3333
+offset_top = 8.0
+offset_right = 36.3333
+offset_bottom = 53.0
+texture_normal = ExtResource("16_boyg6")
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl2" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row1"]
+layout_mode = 0
+offset_left = 30.6667
+offset_top = 8.0
+offset_right = 52.6667
+offset_bottom = 53.0
+texture_normal = ExtResource("16_boyg6")
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl3" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row1"]
+layout_mode = 0
+offset_left = 48.6667
+offset_top = 8.0
+offset_right = 70.6667
+offset_bottom = 53.0
+texture_normal = ExtResource("16_boyg6")
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl4" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row1"]
+layout_mode = 0
+offset_left = 66.3333
+offset_top = 8.0
+offset_right = 88.3333
+offset_bottom = 53.0
+texture_normal = ExtResource("18_e36ub")
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl7" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row1"]
+layout_mode = 0
+offset_left = 163.667
+offset_top = 8.0
+offset_right = 185.667
+offset_bottom = 53.0
+texture_normal = ExtResource("16_boyg6")
+flip_h = true
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl8" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row1"]
+layout_mode = 0
+offset_left = 146.333
+offset_top = 8.0
+offset_right = 168.333
+offset_bottom = 53.0
+texture_normal = ExtResource("16_boyg6")
+flip_h = true
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl9" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row1"]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 8.0
+offset_right = 151.0
+offset_bottom = 53.0
+texture_normal = ExtResource("16_boyg6")
+flip_h = true
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl10" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row1"]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 8.0
+offset_right = 136.0
+offset_bottom = 53.0
+texture_normal = ExtResource("16_boyg6")
+flip_h = true
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl5" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row1"]
+layout_mode = 0
+offset_left = 82.3333
+offset_top = 8.0
+offset_right = 104.333
+offset_bottom = 53.0
+texture_normal = ExtResource("18_e36ub")
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl6" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row1"]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 8.0
+offset_right = 121.0
+offset_bottom = 53.0
+texture_normal = ExtResource("18_e36ub")
+script = ExtResource("17_boyg6")
+
+[node name="Row2" type="Control" parent="CanvasLayer/Control/Shelf"]
+anchors_preset = 0
+offset_top = 60.6667
+offset_right = 40.0
+offset_bottom = 100.667
+
+[node name="Booktopl" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row2"]
+layout_mode = 0
+offset_left = 14.3333
+offset_top = 8.0
+offset_right = 36.3333
+offset_bottom = 53.0
+texture_normal = ExtResource("16_boyg6")
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl2" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row2"]
+layout_mode = 0
+offset_left = 30.6667
+offset_top = 8.0
+offset_right = 52.6667
+offset_bottom = 53.0
+texture_normal = ExtResource("16_boyg6")
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl3" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row2"]
+layout_mode = 0
+offset_left = 48.6667
+offset_top = 8.0
+offset_right = 70.6667
+offset_bottom = 53.0
+texture_normal = ExtResource("16_boyg6")
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl4" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row2"]
+layout_mode = 0
+offset_left = 66.3333
+offset_top = 8.0
+offset_right = 88.3333
+offset_bottom = 53.0
+texture_normal = ExtResource("18_e36ub")
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl7" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row2"]
+layout_mode = 0
+offset_left = 163.667
+offset_top = 8.0
+offset_right = 185.667
+offset_bottom = 53.0
+texture_normal = ExtResource("16_boyg6")
+flip_h = true
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl8" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row2"]
+layout_mode = 0
+offset_left = 146.333
+offset_top = 8.0
+offset_right = 168.333
+offset_bottom = 53.0
+texture_normal = ExtResource("16_boyg6")
+flip_h = true
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl9" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row2"]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 8.0
+offset_right = 151.0
+offset_bottom = 53.0
+texture_normal = ExtResource("16_boyg6")
+flip_h = true
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl10" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row2"]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 8.0
+offset_right = 136.0
+offset_bottom = 53.0
+texture_normal = ExtResource("16_boyg6")
+flip_h = true
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl5" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row2"]
+layout_mode = 0
+offset_left = 82.3333
+offset_top = 8.0
+offset_right = 104.333
+offset_bottom = 53.0
+texture_normal = ExtResource("18_e36ub")
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl6" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row2"]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 8.0
+offset_right = 121.0
+offset_bottom = 53.0
+texture_normal = ExtResource("18_e36ub")
+script = ExtResource("17_boyg6")
+
+[node name="Row3" type="Control" parent="CanvasLayer/Control/Shelf"]
+anchors_preset = 0
+offset_top = 126.4
+offset_right = 40.0
+offset_bottom = 166.4
+
+[node name="Booktopl6" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row3"]
+layout_mode = 0
+offset_left = 17.3333
+offset_top = 4.33332
+offset_right = 41.3333
+offset_bottom = 53.3333
+texture_normal = ExtResource("19_hb5m1")
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl7" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row3"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 4.33332
+offset_right = 58.0
+offset_bottom = 53.3333
+texture_normal = ExtResource("19_hb5m1")
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl8" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row3"]
+layout_mode = 0
+offset_left = 53.6667
+offset_top = 4.33332
+offset_right = 77.6667
+offset_bottom = 53.3333
+texture_normal = ExtResource("19_hb5m1")
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl9" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row3"]
+layout_mode = 0
+offset_left = 71.6667
+offset_top = 4.33332
+offset_right = 95.6667
+offset_bottom = 53.3333
+texture_normal = ExtResource("19_hb5m1")
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl10" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row3"]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 4.33332
+offset_right = 113.0
+offset_bottom = 53.3333
+texture_normal = ExtResource("19_hb5m1")
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl11" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row3"]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 4.33332
+offset_right = 131.0
+offset_bottom = 53.3333
+texture_normal = ExtResource("19_hb5m1")
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl12" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row3"]
+layout_mode = 0
+offset_left = 126.333
+offset_top = 4.33332
+offset_right = 150.333
+offset_bottom = 53.3333
+texture_normal = ExtResource("19_hb5m1")
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl13" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row3"]
+layout_mode = 0
+offset_left = 144.333
+offset_top = 4.33332
+offset_right = 168.333
+offset_bottom = 53.3333
+texture_normal = ExtResource("19_hb5m1")
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl14" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row3"]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 4.33332
+offset_right = 187.0
+offset_bottom = 53.3333
+texture_normal = ExtResource("19_hb5m1")
+script = ExtResource("17_boyg6")
+
+[node name="Row4" type="Control" parent="CanvasLayer/Control/Shelf"]
+anchors_preset = 0
+offset_top = 194.0
+offset_right = 40.0
+offset_bottom = 234.0
+scale = Vector2(1, 0.8)
+
+[node name="Booktopl6" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row4"]
+layout_mode = 0
+offset_left = 17.3333
+offset_top = 4.33332
+offset_right = 41.3333
+offset_bottom = 53.3333
+texture_normal = ExtResource("19_hb5m1")
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl7" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row4"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 4.33332
+offset_right = 58.0
+offset_bottom = 53.3333
+texture_normal = ExtResource("19_hb5m1")
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl8" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row4"]
+layout_mode = 0
+offset_left = 53.6667
+offset_top = 4.33332
+offset_right = 77.6667
+offset_bottom = 53.3333
+texture_normal = ExtResource("19_hb5m1")
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl9" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row4"]
+layout_mode = 0
+offset_left = 71.6667
+offset_top = 4.33332
+offset_right = 95.6667
+offset_bottom = 53.3333
+texture_normal = ExtResource("19_hb5m1")
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl10" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row4"]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 4.33332
+offset_right = 113.0
+offset_bottom = 53.3333
+texture_normal = ExtResource("19_hb5m1")
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl11" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row4"]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 4.33332
+offset_right = 131.0
+offset_bottom = 53.3333
+texture_normal = ExtResource("19_hb5m1")
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl12" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row4"]
+layout_mode = 0
+offset_left = 126.333
+offset_top = 4.33332
+offset_right = 150.333
+offset_bottom = 53.3333
+texture_normal = ExtResource("19_hb5m1")
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl13" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row4"]
+layout_mode = 0
+offset_left = 144.333
+offset_top = 4.33332
+offset_right = 168.333
+offset_bottom = 53.3333
+texture_normal = ExtResource("19_hb5m1")
+script = ExtResource("17_boyg6")
+
+[node name="Booktopl14" type="TextureButton" parent="CanvasLayer/Control/Shelf/Row4"]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 4.33332
+offset_right = 187.0
+offset_bottom = 53.3333
+texture_normal = ExtResource("19_hb5m1")
+script = ExtResource("17_boyg6")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 486.0
+offset_top = 571.0
+offset_right = 667.0
+offset_bottom = 594.0
+text = "Haz encontrado la llave"
+
+[connection signal="body_entered" from="Puerta/Area2D3" to="Puerta/Area2D3" method="_on_body_entered"]
+[connection signal="body_exited" from="Puerta/Area2D3" to="Puerta/Area2D3" method="_on_body_exited"]
+[connection signal="body_entered" from="Bookshelf/Area2D3" to="Bookshelf/Area2D3" method="_on_body_entered"]
+[connection signal="body_exited" from="Bookshelf/Area2D3" to="Bookshelf/Area2D3" method="_on_body_exited"]
 [connection signal="body_entered" from="MirrorItm/Area2D2" to="MirrorItm/Area2D2" method="_on_body_entered"]
 [connection signal="body_exited" from="MirrorItm/Area2D2" to="MirrorItm/Area2D2" method="_on_body_exited"]
+[connection signal="body_entered" from="Key/Area2D2" to="Key/Area2D2" method="_on_body_entered"]
+[connection signal="body_exited" from="Key/Area2D2" to="Key/Area2D2" method="_on_body_exited"]
 [connection signal="body_entered" from="Bed/Area2D" to="Bed/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Bed/Area2D" to="Bed/Area2D" method="_on_body_exited"]
 [connection signal="button_down" from="CanvasLayer/Control/Mirror/Button" to="CanvasLayer/Control/Mirror" method="_on_button_button_down"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row1/Booktopl" to="CanvasLayer/Control/Shelf/Row1/Booktopl" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row1/Booktopl2" to="CanvasLayer/Control/Shelf/Row1/Booktopl2" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row1/Booktopl3" to="CanvasLayer/Control/Shelf/Row1/Booktopl3" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row1/Booktopl4" to="CanvasLayer/Control/Shelf/Row1/Booktopl4" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row1/Booktopl7" to="CanvasLayer/Control/Shelf/Row1/Booktopl7" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row1/Booktopl8" to="CanvasLayer/Control/Shelf/Row1/Booktopl8" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row1/Booktopl9" to="CanvasLayer/Control/Shelf/Row1/Booktopl9" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row1/Booktopl10" to="CanvasLayer/Control/Shelf/Row1/Booktopl10" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row1/Booktopl5" to="CanvasLayer/Control/Shelf/Row1/Booktopl5" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row1/Booktopl6" to="CanvasLayer/Control/Shelf/Row1/Booktopl6" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row2/Booktopl" to="CanvasLayer/Control/Shelf/Row2/Booktopl" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row2/Booktopl2" to="CanvasLayer/Control/Shelf/Row2/Booktopl2" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row2/Booktopl3" to="CanvasLayer/Control/Shelf/Row2/Booktopl3" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row2/Booktopl4" to="CanvasLayer/Control/Shelf/Row2/Booktopl4" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row2/Booktopl7" to="CanvasLayer/Control/Shelf/Row2/Booktopl7" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row2/Booktopl8" to="CanvasLayer/Control/Shelf/Row2/Booktopl8" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row2/Booktopl9" to="CanvasLayer/Control/Shelf/Row2/Booktopl9" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row2/Booktopl10" to="CanvasLayer/Control/Shelf/Row2/Booktopl10" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row2/Booktopl5" to="CanvasLayer/Control/Shelf/Row2/Booktopl5" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row2/Booktopl6" to="CanvasLayer/Control/Shelf/Row2/Booktopl6" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row3/Booktopl6" to="CanvasLayer/Control/Shelf/Row3/Booktopl6" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row3/Booktopl7" to="CanvasLayer/Control/Shelf/Row3/Booktopl7" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row3/Booktopl8" to="CanvasLayer/Control/Shelf/Row3/Booktopl8" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row3/Booktopl9" to="CanvasLayer/Control/Shelf/Row3/Booktopl9" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row3/Booktopl10" to="CanvasLayer/Control/Shelf/Row3/Booktopl10" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row3/Booktopl11" to="CanvasLayer/Control/Shelf/Row3/Booktopl11" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row3/Booktopl12" to="CanvasLayer/Control/Shelf/Row3/Booktopl12" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row3/Booktopl13" to="CanvasLayer/Control/Shelf/Row3/Booktopl13" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row3/Booktopl14" to="CanvasLayer/Control/Shelf/Row3/Booktopl14" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row4/Booktopl6" to="CanvasLayer/Control/Shelf/Row4/Booktopl6" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row4/Booktopl7" to="CanvasLayer/Control/Shelf/Row4/Booktopl7" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row4/Booktopl8" to="CanvasLayer/Control/Shelf/Row4/Booktopl8" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row4/Booktopl9" to="CanvasLayer/Control/Shelf/Row4/Booktopl9" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row4/Booktopl10" to="CanvasLayer/Control/Shelf/Row4/Booktopl10" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row4/Booktopl11" to="CanvasLayer/Control/Shelf/Row4/Booktopl11" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row4/Booktopl12" to="CanvasLayer/Control/Shelf/Row4/Booktopl12" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row4/Booktopl13" to="CanvasLayer/Control/Shelf/Row4/Booktopl13" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Shelf/Row4/Booktopl14" to="CanvasLayer/Control/Shelf/Row4/Booktopl14" method="_on_pressed"]

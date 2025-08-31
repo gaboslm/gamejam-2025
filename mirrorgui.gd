@@ -8,6 +8,9 @@ func _process(delta: float):
 	
 	if time_since_last_click >= 0.4:
 		multi_clicks = 0
+	
+	if Input.is_key_pressed(KEY_ESCAPE):
+		get_parent().visible = false
 
 func _on_button_button_down() -> void:
 	time_since_last_click = 0.0
