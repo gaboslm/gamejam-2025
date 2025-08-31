@@ -154,6 +154,8 @@ func get_neighbors(xo: int, yo: int) -> Array:
 		for y in range(-1, 2):
 			if x == 0 and y == 0:
 				continue
+			if x != 0 and y != 0:
+				continue
 			var xi = x + xo
 			var yi = y + yo
 			

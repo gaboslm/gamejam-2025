@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://b2x6a26j8nw1u"]
+[gd_scene load_steps=43 format=4 uid="uid://b2x6a26j8nw1u"]
 
 [ext_resource type="PackedScene" uid="uid://dh3dxqp3ui4ds" path="res://player.tscn" id="1_80nbo"]
 [ext_resource type="Texture2D" uid="uid://066333no1x36" path="res://assets/puerta.png" id="2_215e1"]
@@ -23,6 +23,8 @@
 [ext_resource type="Script" uid="uid://dsey4wqpryu2n" path="res://shelfbook.gd" id="17_boyg6"]
 [ext_resource type="Texture2D" uid="uid://ba1qwhclepetu" path="res://assets/shelf/booktopm.png" id="18_e36ub"]
 [ext_resource type="Texture2D" uid="uid://dlx1twgdsfxk4" path="res://assets/shelf/bookbotm.png" id="19_hb5m1"]
+[ext_resource type="Script" uid="uid://d13xo5upsfevm" path="res://panel_2.gd" id="24_f1jbl"]
+[ext_resource type="Script" uid="uid://b2e1tgjoap2r8" path="res://to_dream_transition.gd" id="25_vaj68"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feb5d"]
 resource_name = "Wood"
@@ -74,10 +76,13 @@ size = Vector2(203.5, 46.5)
 size = Vector2(203.5, 27.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhcbd"]
-size = Vector2(72.9688, 37)
+size = Vector2(75.484, 57.0001)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eow3j"]
 size = Vector2(159, 241)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhcbd"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="Node2D" type="Node2D"]
 
@@ -179,7 +184,7 @@ scale = Vector2(0.333333, 0.333333)
 script = ExtResource("5_7jktm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Key/Area2D2"]
-position = Vector2(527, 359.5)
+position = Vector2(528.258, 438)
 shape = SubResource("RectangleShape2D_qhcbd")
 
 [node name="Inspected" type="Node" parent="Key/Area2D2"]
@@ -625,6 +630,22 @@ offset_right = 187.0
 offset_bottom = 53.3333
 texture_normal = ExtResource("19_hb5m1")
 script = ExtResource("17_boyg6")
+
+[node name="Panel2" type="Panel" parent="CanvasLayer"]
+offset_left = -32.0
+offset_right = 1193.0
+offset_bottom = 681.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qhcbd")
+script = ExtResource("24_f1jbl")
+
+[node name="Panel3" type="Panel" parent="CanvasLayer"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = -32.0
+offset_right = 1193.0
+offset_bottom = 681.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qhcbd")
+script = ExtResource("25_vaj68")
 
 [node name="Label" type="Label" parent="."]
 visible = false

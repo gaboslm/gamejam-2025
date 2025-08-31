@@ -1,0 +1,175 @@
+[gd_scene load_steps=11 format=3 uid="uid://b5wquhsrqcmq1"]
+
+[ext_resource type="Texture2D" uid="uid://by3uesnouht84" path="res://assets/naraq_eepy.png" id="1_q0xg8"]
+[ext_resource type="Texture2D" uid="uid://cdaxj0vwkjo3k" path="res://assets/sueñorecurrente.png" id="2_q0xg8"]
+[ext_resource type="Script" uid="uid://d11w78t7tlqw" path="res://iniciarjuego.gd" id="3_yogrx"]
+[ext_resource type="Texture2D" uid="uid://bjtxcvhocgent" path="res://assets/naraqstory1.png" id="4_htw3k"]
+[ext_resource type="Texture2D" uid="uid://bxvyh30dl7bci" path="res://assets/naraqstory2.png" id="5_7e6sy"]
+[ext_resource type="Texture2D" uid="uid://b2mrbwhx0c4ea" path="res://assets/controles.png" id="6_x8a4r"]
+[ext_resource type="Texture2D" uid="uid://c364258kmymru" path="res://assets/controles2.png" id="7_xagyt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yogrx"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7e6sy"]
+font_size = 26
+
+[sub_resource type="LabelSettings" id="LabelSettings_xagyt"]
+font_size = 40
+
+[node name="Inicio" type="Node2D"]
+
+[node name="NaraqMenu" type="Sprite2D" parent="."]
+position = Vector2(585, 280)
+texture = ExtResource("1_q0xg8")
+
+[node name="Sueñorecurrente" type="Sprite2D" parent="."]
+position = Vector2(376, 191)
+texture = ExtResource("2_q0xg8")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 349.0
+offset_top = 451.0
+offset_right = 447.0
+offset_bottom = 501.0
+theme_override_font_sizes/font_size = 30
+text = "Iniciar"
+script = ExtResource("3_yogrx")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = -32.0
+offset_right = 1193.0
+offset_bottom = 681.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yogrx")
+
+[node name="Naraqstory1" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(644, 349)
+texture = ExtResource("4_htw3k")
+
+[node name="Label" type="Label" parent="Naraqstory1"]
+offset_left = -557.0
+offset_top = -278.0
+offset_right = -208.0
+offset_bottom = -125.0
+text = "Cada noche...
+
+Cuando llego a casa, y es
+hora de dormir..."
+label_settings = SubResource("LabelSettings_7e6sy")
+
+[node name="Naraqstory2" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(639, 349)
+texture = ExtResource("5_7e6sy")
+
+[node name="Label" type="Label" parent="Naraqstory2"]
+offset_left = -596.0
+offset_right = -247.0
+offset_bottom = 153.0
+text = "Siempre tengo
+el mismo sueño
+
+Un sueño recurrente"
+label_settings = SubResource("LabelSettings_7e6sy")
+
+[node name="Naraqstory3" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(639, 349)
+texture = ExtResource("5_7e6sy")
+
+[node name="Label" type="Label" parent="Naraqstory3"]
+offset_left = -596.0
+offset_top = 62.0
+offset_right = -247.0
+offset_bottom = 215.0
+text = "No sé como describirlo...
+
+Pero si tuviera que hacerlo...
+
+Sería algo así:"
+label_settings = SubResource("LabelSettings_7e6sy")
+
+[node name="Naraqstory4" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(587, 349)
+texture = ExtResource("6_x8a4r")
+
+[node name="Label" type="Label" parent="Naraqstory4"]
+offset_left = -209.0
+offset_top = -217.0
+offset_right = 170.0
+offset_bottom = -25.0
+text = "Controles"
+label_settings = SubResource("LabelSettings_xagyt")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Naraqstory4"]
+offset_left = -405.0
+offset_top = 196.0
+offset_right = -26.0
+offset_bottom = 388.0
+text = "WASD para Caminar"
+label_settings = SubResource("LabelSettings_7e6sy")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Naraqstory4"]
+offset_left = 31.0
+offset_top = 196.0
+offset_right = 410.0
+offset_bottom = 388.0
+text = "Z para interactuar
+con objetos cercanos"
+label_settings = SubResource("LabelSettings_7e6sy")
+horizontal_alignment = 1
+
+[node name="Naraqstory5" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(613, 349)
+texture = ExtResource("7_xagyt")
+
+[node name="Label" type="Label" parent="Naraqstory5"]
+offset_left = -614.0
+offset_top = -316.0
+offset_right = -235.0
+offset_bottom = -124.0
+text = "Controles"
+label_settings = SubResource("LabelSettings_xagyt")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Naraqstory5"]
+offset_left = -602.0
+offset_top = -125.0
+offset_right = -223.0
+offset_bottom = 67.0
+text = "Algunos objetos
+tienen interacción con
+el mouse"
+label_settings = SubResource("LabelSettings_7e6sy")
+
+[node name="Label3" type="Label" parent="Naraqstory5"]
+offset_left = -602.0
+offset_top = 102.0
+offset_right = -223.0
+offset_bottom = 294.0
+text = "Pulsa ESC para sair de
+estas interacciones"
+label_settings = SubResource("LabelSettings_7e6sy")
+
+[node name="Panel2" type="Panel" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = -32.0
+offset_right = 1193.0
+offset_bottom = 681.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yogrx")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

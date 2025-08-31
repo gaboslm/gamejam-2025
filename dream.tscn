@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://dl6w87awujuty"]
+[gd_scene load_steps=65 format=4 uid="uid://dl6w87awujuty"]
 
 [ext_resource type="Script" uid="uid://dddv7d31edv72" path="res://padcontrol.gd" id="1_g1xmq"]
 [ext_resource type="Texture2D" uid="uid://65i80sgumx8k" path="res://assets/suelo_sueño.png" id="1_pu4yq"]
@@ -20,11 +20,16 @@
 [ext_resource type="Texture2D" uid="uid://ba7uq046eykm7" path="res://assets/padbtn8.png" id="9_45qgd"]
 [ext_resource type="Texture2D" uid="uid://mx4jksdlw26w" path="res://assets/padbtn9.png" id="10_0dd72"]
 [ext_resource type="Texture2D" uid="uid://bff23vqqd0sk7" path="res://assets/sym1.png" id="11_51ofx"]
+[ext_resource type="Script" uid="uid://d13xo5upsfevm" path="res://panel_2.gd" id="13_7wvxn"]
 [ext_resource type="Script" uid="uid://ce1rd66vyhp7k" path="res://play.gd" id="15_0vd1o"]
 [ext_resource type="Texture2D" uid="uid://dlujms5j81cy3" path="res://assets/laser.png" id="15_7w6fh"]
 [ext_resource type="Script" uid="uid://cr7sif3eqj1du" path="res://padscript.gd" id="20_7w6fh"]
 [ext_resource type="Texture2D" uid="uid://cl1m628ibl4xd" path="res://assets/bed.png" id="24_onrsv"]
+[ext_resource type="Texture2D" uid="uid://3y08v35p04ap" path="res://assets/roommap.png" id="26_7wvxn"]
 [ext_resource type="Script" uid="uid://dyfem0apygo2b" path="res://dreambed.gd" id="26_81ajx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4msip"]
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dh56e"]
 texture = ExtResource("1_pu4yq")
@@ -279,6 +284,13 @@ visible = false
 layout_mode = 2
 texture = ExtResource("11_51ofx")
 expand_mode = 2
+
+[node name="Panel2" type="Panel" parent="UI"]
+offset_left = -32.0
+offset_right = 1193.0
+offset_bottom = 681.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4msip")
+script = ExtResource("13_7wvxn")
 
 [node name="World" type="TileMapLayer" parent="."]
 scale = Vector2(3, 3)
@@ -2917,6 +2929,11 @@ shape = SubResource("RectangleShape2D_0vd1o")
 [node name="Inspected" type="Node" parent="Pad/Area2D2"]
 script = ExtResource("20_7w6fh")
 
+[node name="Roommap" type="Sprite2D" parent="."]
+position = Vector2(-2820, 55)
+scale = Vector2(0.817669, 0.817669)
+texture = ExtResource("26_7wvxn")
+
 [node name="Player" parent="." instance=ExtResource("2_8mmqv")]
 position = Vector2(575, -1609)
 
@@ -2972,11 +2989,21 @@ Cinco de la cuarta"
 horizontal_alignment = 1
 
 [node name="Label4" type="Label" parent="."]
-offset_left = -2948.0
-offset_top = 194.0
-offset_right = -2775.0
-offset_bottom = 217.0
-text = "<imagen de las llaves>"
+offset_left = -3079.0
+offset_top = 277.0
+offset_right = -2856.0
+offset_bottom = 326.0
+text = "A veces debes revisar
+donde no parece haber nada"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="."]
+offset_left = -2781.0
+offset_top = 277.0
+offset_right = -2558.0
+offset_bottom = 326.0
+text = "A veces debes revisar
+dos veces en el mismo lugar"
 horizontal_alignment = 1
 
 [node name="Bed" type="Sprite2D" parent="."]

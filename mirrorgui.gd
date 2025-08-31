@@ -6,7 +6,7 @@ var multi_clicks := 0
 func _process(delta: float):
 	time_since_last_click += delta
 	
-	if time_since_last_click >= 0.4:
+	if time_since_last_click >= 0.2:
 		multi_clicks = 0
 	
 	if Input.is_key_pressed(KEY_ESCAPE):

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://0psta6turcv8"]
+
+[ext_resource type="Texture2D" uid="uid://bxxkqxe886qfw" path="res://assets/naraq_menu.png" id="1_n735c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_egc6y"]
+font_size = 30
+
+[node name="End" type="Node2D"]
+
+[node name="NaraqMenu" type="Sprite2D" parent="."]
+position = Vector2(571, 349)
+texture = ExtResource("1_n735c")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 175.0
+offset_top = 213.0
+offset_right = 700.0
+offset_bottom = 390.0
+text = "Haz despertado
+
+Pero sabes que cuando vuelvas a dormir
+
+Tendrás este sueño una vez más"
+label_settings = SubResource("LabelSettings_egc6y")

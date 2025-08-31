@@ -12,5 +12,5 @@ func _on_body_exited(body: Node2D) -> void:
 		inspect_this = false
 
 func _process(delta: float) -> void:
-	if Input.is_key_pressed(KEY_Z) and inspect_this:
+	if Input.is_action_just_pressed("interact") and inspect_this:
 		$Inspected.inspected()

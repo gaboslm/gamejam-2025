@@ -4,6 +4,8 @@ const MAX_VEL := 200.0
 
 var has_key := false
 
+var facing = "down"
+
 func _process(delta: float):
 	var gamma := 60.0 * delta
 	var delta_lerp = 0.2
@@ -26,3 +28,28 @@ func _process(delta: float):
 		#self.velocity = self.velocity.normalized() * MAX_VEL
 	
 	move_and_slide()
+	
+	if velocity.x > 2:
+		if velocity.y > 2:
+			facing = "downright"
+		elif velocity.y < -2:
+			facing = "upright"
+		elif abs(velocity.y) < 0.5:
+			facing = "right"
+	elif velocity.x < -2:
+		if velocity.y > 2:
+			facing = "downleft"
+		elif velocity.y < -2:
+			facing = "upleft"
+		elif abs(velocity.y) < 0.5:
+			facing = "left"
+	elif abs(velocity.x) < 0.5:
+		if velocity.y > 2:
+			facing = "down"
+		elif velocity.y < -2:
+			facing = "up"
+	
+	if velocity.length() < 5:
+		$AnimatedSprite2D.play(facing)
+	else:
+		$AnimatedSprite2D.play(facing + "_walk")
