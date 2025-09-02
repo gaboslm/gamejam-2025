@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=4 uid="uid://dl6w87awujuty"]
+[gd_scene load_steps=75 format=4 uid="uid://dl6w87awujuty"]
 
 [ext_resource type="Script" uid="uid://dddv7d31edv72" path="res://padcontrol.gd" id="1_g1xmq"]
 [ext_resource type="Texture2D" uid="uid://65i80sgumx8k" path="res://assets/suelo_sueño.png" id="1_pu4yq"]
@@ -24,9 +24,17 @@
 [ext_resource type="Script" uid="uid://ce1rd66vyhp7k" path="res://play.gd" id="15_0vd1o"]
 [ext_resource type="Texture2D" uid="uid://dlujms5j81cy3" path="res://assets/laser.png" id="15_7w6fh"]
 [ext_resource type="Script" uid="uid://cr7sif3eqj1du" path="res://padscript.gd" id="20_7w6fh"]
+[ext_resource type="Texture2D" uid="uid://b2vqiutmncysm" path="res://assets/huellas_sueño_up.png" id="21_qt06t"]
+[ext_resource type="Texture2D" uid="uid://15vn3tvp4i26" path="res://assets/huellas_sueño_down.png" id="22_phf8j"]
 [ext_resource type="Texture2D" uid="uid://cl1m628ibl4xd" path="res://assets/bed.png" id="24_onrsv"]
 [ext_resource type="Texture2D" uid="uid://3y08v35p04ap" path="res://assets/roommap.png" id="26_7wvxn"]
 [ext_resource type="Script" uid="uid://dyfem0apygo2b" path="res://dreambed.gd" id="26_81ajx"]
+[ext_resource type="Texture2D" uid="uid://c0wdw6xuk3wv0" path="res://assets/tree_1.png" id="30_n1hpn"]
+[ext_resource type="Texture2D" uid="uid://iiupvn5q34s0" path="res://assets/tree_2.png" id="31_4t40v"]
+[ext_resource type="Texture2D" uid="uid://bqfpdt6esnln3" path="res://assets/tree_11.png" id="32_u26xp"]
+[ext_resource type="Texture2D" uid="uid://d10kdu0jrqiyr" path="res://assets/tree_4.png" id="33_a12ns"]
+[ext_resource type="Texture2D" uid="uid://dnsonfevhtcmy" path="res://assets/tree_17.png" id="34_v7obf"]
+[ext_resource type="Texture2D" uid="uid://reyjb3ik8ga" path="res://assets/tree_3.png" id="35_4t40v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4msip"]
 bg_color = Color(0, 0, 0, 1)
@@ -161,9 +169,19 @@ size = Vector2(424, 42.25)
 texture = ExtResource("5_pu4yq")
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2apto"]
+texture = ExtResource("21_qt06t")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tah81"]
+texture = ExtResource("22_phf8j")
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_fe1s8"]
 tile_size = Vector2i(17, 17)
 sources/0 = SubResource("TileSetAtlasSource_8mmqv")
+sources/2 = SubResource("TileSetAtlasSource_2apto")
+sources/3 = SubResource("TileSetAtlasSource_tah81")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0vd1o"]
 size = Vector2(64.0001, 59)
@@ -291,6 +309,14 @@ offset_right = 1193.0
 offset_bottom = 681.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_4msip")
 script = ExtResource("13_7wvxn")
+
+[node name="Label" type="Label" parent="UI/Panel2"]
+layout_mode = 0
+offset_left = -100.0
+offset_top = 612.0
+offset_right = 1493.0
+offset_bottom = 635.0
+text = "un sueño dentro de un sueño dentro de un sueño dentro de un sueño dentro de un  sueño dentro de un sueño dentro de un  sueño dentro de un sueño dentro de un  sueño dentro de un sueño dentro de un "
 
 [node name="World" type="TileMapLayer" parent="."]
 scale = Vector2(3, 3)
@@ -2909,7 +2935,7 @@ position = Vector2(306, 255)
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(555, -1644)
 scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AADw/yEAAAAAAAAAAADv/yEAAAAAAAAAAADu/yEAAAAAAAAAAADt/yEAAAAAAAAAAADs/yEAAAAAAAAAAADr/yEAAAAAAAAAAADq/yEAAAAAAAAAAADp/yEAAAAAAAAAAADo/yEAAAAAAAAAAADg/yEAAAAAAAAAAADf/yEAAAAAAAAAAADf/yAAAAAAAAAAAADe/yAAAAAAAAAAAADd/yAAAAAAAAAAAADc/yAAAAAAAAAAAADa/yIAAAAAAAAAAADY/yEAAAAAAAAAAADc/yEAAAAAAAAAAADc/yIAAAAAAAAAAADb/yIAAAAAAAAAAADZ/yEAAAAAAAAAAADa/yEAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AADw/yEAAAAAAAAAAADv/yEAAAAAAAAAAADu/yEAAAAAAAAAAADt/yEAAAAAAAAAAADs/yEAAAAAAAAAAADr/yEAAAAAAAAAAADq/yEAAAAAAAAAAADp/yEAAAAAAAAAAADo/yEAAAAAAAAAAADg/yEAAAAAAAAAAADf/yEAAgAAAAAAAADf/yAAAgAAAAAAAADe/yAAAAAAAAAAAADd/yAAAAAAAAAAAADc/yAAAwAAAAAAAADa/yIAAgAAAAAAAADY/yEAAAAAAAAAAADc/yEAAwAAAAAAAADc/yIAAAAAAAAAAADb/yIAAAAAAAAAAADZ/yEAAAAAAAAAAADa/yEAAgAAAAAAAAA=")
 tile_set = SubResource("TileSet_fe1s8")
 
 [node name="Pad" type="Sprite2D" parent="."]
@@ -3073,6 +3099,71 @@ shape = SubResource("RectangleShape2D_7wvxn")
 
 [node name="Inspected" type="Node" parent="Bed4/Area2D"]
 script = ExtResource("26_81ajx")
+
+[node name="Tree1" type="Sprite2D" parent="."]
+position = Vector2(293, -1636)
+texture = ExtResource("30_n1hpn")
+
+[node name="Tree2" type="Sprite2D" parent="."]
+position = Vector2(1152, -1317)
+texture = ExtResource("30_n1hpn")
+flip_h = true
+
+[node name="Tree3" type="Sprite2D" parent="."]
+position = Vector2(88, -1297)
+texture = ExtResource("30_n1hpn")
+
+[node name="Tree4" type="Sprite2D" parent="."]
+position = Vector2(247, -950)
+texture = ExtResource("30_n1hpn")
+
+[node name="Tree6" type="Sprite2D" parent="."]
+position = Vector2(950, -1549)
+texture = ExtResource("30_n1hpn")
+
+[node name="Tree7" type="Sprite2D" parent="."]
+position = Vector2(1016, -733)
+texture = ExtResource("31_4t40v")
+
+[node name="Tree8" type="Sprite2D" parent="."]
+position = Vector2(239, -1189)
+texture = ExtResource("31_4t40v")
+
+[node name="Tree11" type="Sprite2D" parent="."]
+position = Vector2(916, -492)
+texture = ExtResource("32_u26xp")
+
+[node name="Tree9" type="Sprite2D" parent="."]
+position = Vector2(925, -1125)
+texture = ExtResource("33_a12ns")
+
+[node name="Tree17" type="Sprite2D" parent="."]
+position = Vector2(269, -1428)
+texture = ExtResource("34_v7obf")
+
+[node name="Tree12" type="Sprite2D" parent="."]
+position = Vector2(123, -359)
+texture = ExtResource("32_u26xp")
+
+[node name="Tree13" type="Sprite2D" parent="."]
+position = Vector2(1410, -4)
+texture = ExtResource("32_u26xp")
+
+[node name="Tree14" type="Sprite2D" parent="."]
+position = Vector2(1818, 556)
+texture = ExtResource("32_u26xp")
+
+[node name="Tree15" type="Sprite2D" parent="."]
+position = Vector2(2314, -84)
+texture = ExtResource("32_u26xp")
+
+[node name="Tree5" type="Sprite2D" parent="."]
+position = Vector2(910, 38)
+texture = ExtResource("35_4t40v")
+
+[node name="Tree16" type="Sprite2D" parent="."]
+position = Vector2(113, 545)
+texture = ExtResource("32_u26xp")
 
 [connection signal="pressed" from="UI/Control/GridContainer/1" to="UI/Control" method="_on_1_pressed"]
 [connection signal="pressed" from="UI/Control/GridContainer/2" to="UI/Control" method="_on_2_pressed"]

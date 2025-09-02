@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://b2x6a26j8nw1u"]
+[gd_scene load_steps=48 format=4 uid="uid://b2x6a26j8nw1u"]
 
 [ext_resource type="PackedScene" uid="uid://dh3dxqp3ui4ds" path="res://player.tscn" id="1_80nbo"]
 [ext_resource type="Texture2D" uid="uid://066333no1x36" path="res://assets/puerta.png" id="2_215e1"]
@@ -25,6 +25,9 @@
 [ext_resource type="Texture2D" uid="uid://dlx1twgdsfxk4" path="res://assets/shelf/bookbotm.png" id="19_hb5m1"]
 [ext_resource type="Script" uid="uid://d13xo5upsfevm" path="res://panel_2.gd" id="24_f1jbl"]
 [ext_resource type="Script" uid="uid://b2e1tgjoap2r8" path="res://to_dream_transition.gd" id="25_vaj68"]
+[ext_resource type="Texture2D" uid="uid://c8b45vcgcd5h0" path="res://assets/zapato.png" id="26_i2p71"]
+[ext_resource type="Texture2D" uid="uid://dcege8qj1yq7b" path="res://assets/shelf.png" id="27_xa8c5"]
+[ext_resource type="Texture2D" uid="uid://d0d4d1qjlp48r" path="res://assets/mesa.png" id="28_5b14r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feb5d"]
 resource_name = "Wood"
@@ -63,11 +66,17 @@ size = Vector2(111, 173)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fc0e3"]
 size = Vector2(60, 482.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bnpwn"]
+size = Vector2(139, 151)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_feb5d"]
 size = Vector2(978, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vef74"]
 size = Vector2(158, 69)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xa8c5"]
+size = Vector2(42, 49)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j5wjh"]
 size = Vector2(203.5, 46.5)
@@ -76,7 +85,7 @@ size = Vector2(203.5, 46.5)
 size = Vector2(203.5, 27.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhcbd"]
-size = Vector2(75.484, 57.0001)
+size = Vector2(89.484, 57.0001)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eow3j"]
 size = Vector2(159, 241)
@@ -127,6 +136,10 @@ shape = SubResource("RectangleShape2D_ryrav")
 position = Vector2(990, 319)
 shape = SubResource("RectangleShape2D_fc0e3")
 
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="WorldC"]
+position = Vector2(930.5, 451.5)
+shape = SubResource("RectangleShape2D_bnpwn")
+
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="WorldC"]
 position = Vector2(575, 178)
 shape = SubResource("RectangleShape2D_feb5d")
@@ -138,6 +151,10 @@ shape = SubResource("RectangleShape2D_vef74")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="WorldC"]
 position = Vector2(575, 542)
 shape = SubResource("RectangleShape2D_feb5d")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="WorldC"]
+position = Vector2(742, 530)
+shape = SubResource("RectangleShape2D_xa8c5")
 
 [node name="Bookshelf" type="Sprite2D" parent="."]
 position = Vector2(387, 9)
@@ -184,7 +201,7 @@ scale = Vector2(0.333333, 0.333333)
 script = ExtResource("5_7jktm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Key/Area2D2"]
-position = Vector2(528.258, 438)
+position = Vector2(548, 436)
 shape = SubResource("RectangleShape2D_qhcbd")
 
 [node name="Inspected" type="Node" parent="Key/Area2D2"]
@@ -647,6 +664,14 @@ offset_bottom = 681.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_qhcbd")
 script = ExtResource("25_vaj68")
 
+[node name="Label" type="Label" parent="CanvasLayer/Panel3"]
+layout_mode = 0
+offset_left = -100.0
+offset_top = 612.0
+offset_right = 1493.0
+offset_bottom = 635.0
+text = "un sueño dentro de un sueño dentro de un sueño dentro de un sueño dentro de un  sueño dentro de un sueño dentro de un  sueño dentro de un sueño dentro de un  sueño dentro de un sueño dentro de un "
+
 [node name="Label" type="Label" parent="."]
 visible = false
 offset_left = 486.0
@@ -654,6 +679,25 @@ offset_top = 571.0
 offset_right = 667.0
 offset_bottom = 594.0
 text = "Haz encontrado la llave"
+
+[node name="Zapato" type="Sprite2D" parent="."]
+position = Vector2(732, 512)
+texture = ExtResource("26_i2p71")
+
+[node name="Zapato2" type="Sprite2D" parent="."]
+position = Vector2(749, 520)
+texture = ExtResource("26_i2p71")
+flip_h = true
+
+[node name="Shelf" type="Sprite2D" parent="."]
+position = Vector2(656, 96)
+scale = Vector2(3, 3)
+texture = ExtResource("27_xa8c5")
+
+[node name="Mesa" type="Sprite2D" parent="."]
+position = Vector2(908, 435)
+scale = Vector2(3, 3)
+texture = ExtResource("28_5b14r")
 
 [connection signal="body_entered" from="Puerta/Area2D3" to="Puerta/Area2D3" method="_on_body_entered"]
 [connection signal="body_exited" from="Puerta/Area2D3" to="Puerta/Area2D3" method="_on_body_exited"]

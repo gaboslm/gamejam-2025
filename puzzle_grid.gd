@@ -62,8 +62,13 @@ func game(delta: float) -> void:
 				var mirror_node = get_node_or_null(mirror_name)
 				
 				mirror_node.is_pressed = true
-				
-		
+		if Input.is_key_pressed(KEY_R):
+			player.position = starting_position
+			for child in self.get_children():
+				child.is_pressed = false
+			return
+			
+			
 	
 	is_inside = in_x_bounds and in_y_bounds
 

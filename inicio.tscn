@@ -78,7 +78,6 @@ Un sueño recurrente"
 label_settings = SubResource("LabelSettings_7e6sy")
 
 [node name="Naraqstory3" type="Sprite2D" parent="."]
-visible = false
 modulate = Color(1, 1, 1, 0)
 self_modulate = Color(0, 0, 0, 1)
 position = Vector2(639, 349)
@@ -89,11 +88,9 @@ offset_left = -596.0
 offset_top = 62.0
 offset_right = -247.0
 offset_bottom = 215.0
-text = "No sé como describirlo...
+text = "Estoy atrapado en mi habitación
 
-Pero si tuviera que hacerlo...
-
-Sería algo así:"
+Y debo encontrar la llave para salir"
 label_settings = SubResource("LabelSettings_7e6sy")
 
 [node name="Naraqstory4" type="Sprite2D" parent="."]
